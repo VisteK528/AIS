@@ -1,7 +1,5 @@
 # Szacowanie skali systemu (back of the envelope)
 
-Projekt: Digital Healthcare Platform (SOZ), kurs Architektura i Integracja Systemów
-
 ## Założenia
 
 | Parametr | Założenie |
@@ -54,7 +52,7 @@ Obrazy:
 1200 badań dziennie × średnio 65 MB = 78 GB dziennie (około 80 GB). Szpitale działają codziennie, więc × 365 daje 28.5 TB, czyli około 29 TB rocznie. 65 MB to uśredniony rozmiar badania ze wszystkich rodzajów.
 
 | Dane | Wolumen |
-| --- | --- | --- |
+| --- | --- |
 | Dokumentacja wizyt i pobytów | 320 GB rocznie |
 | Wyniki laboratoryjne | 300 GB rocznie |
 | Log audytowy | 365 GB rocznie |
