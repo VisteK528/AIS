@@ -3,9 +3,7 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr/diagrams/7d3e51d4-67e5-425e-8bf9-2dc54fe4e134",
-  "lastModifiedDate" : "2026-10-16T19:29:22Z",
-  "lastModifiedUser" : "659597177",
+  "lastModifiedDate" : "2026-11-25T16:58:01Z",
   "model" : {
     "people" : [ {
       "description" : "Kupuje produkty w sklepie internetowym.",
@@ -163,15 +161,14 @@
   },
   "name" : "Sklep",
   "properties" : {
+    "structurizr.inspection.error" : "3",
     "structurizr.inspection.info" : "0",
     "structurizr.inspection.ignore" : "0",
-    "structurizr.inspection.error" : "3",
     "structurizr.inspection.warning" : "0"
   },
   "views" : {
     "configuration" : {
       "lastSavedView" : "01-kontekst",
-      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "background" : "#438dd5",
