@@ -3,8 +3,8 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr/diagrams/d949b685-39c1-4cca-92ff-ae1e19291b44",
-  "lastModifiedDate" : "2026-11-26T22:16:42Z",
+  "lastModifiedAgent" : "structurizr/diagrams/d4e5c442-36eb-4369-a303-e99de2bfc2b5",
+  "lastModifiedDate" : "2026-11-26T22:23:16Z",
   "lastModifiedUser" : "496056570",
   "model" : {
     "customElements" : [ {
@@ -2173,7 +2173,7 @@
       } ]
     } ],
     "configuration" : {
-      "lastSavedView" : "04a-wdrozenie-chmura",
+      "lastSavedView" : "04b-wdrozenie-placowka",
       "metadataSymbols" : "SquareBrackets",
       "properties" : {
         "structurizr.metadata" : "false"
@@ -3255,8 +3255,8 @@
     }, {
       "description" : "Wdrożenie - placówka i jej połączenie z chmurą.",
       "dimensions" : {
-        "height" : 3682,
-        "width" : 6530
+        "height" : 2887,
+        "width" : 4430
       },
       "elements" : [ {
         "id" : "154",
@@ -3264,8 +3264,8 @@
         "y" : 0
       }, {
         "id" : "160",
-        "x" : 2020,
-        "y" : 1560
+        "x" : 2459,
+        "y" : 770
       }, {
         "id" : "161",
         "x" : 0,
@@ -3276,16 +3276,16 @@
         "y" : 0
       }, {
         "id" : "169",
-        "x" : 3640,
-        "y" : 2090
+        "x" : 2394,
+        "y" : 1454
       }, {
         "id" : "172",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "173",
-        "x" : 1960,
-        "y" : 2337
+        "x" : 989,
+        "y" : 1439
       }, {
         "id" : "227",
         "x" : 0,
@@ -3296,72 +3296,51 @@
         "y" : 0
       }, {
         "id" : "229",
-        "x" : 1870,
-        "y" : 290
+        "x" : 3379,
+        "y" : 415
       }, {
         "id" : "231",
-        "x" : 5330,
-        "y" : 290
+        "x" : 3375,
+        "y" : 1845
       }, {
         "id" : "233",
-        "x" : 3700,
-        "y" : 1030
+        "x" : 99,
+        "y" : 790
       }, {
         "id" : "234",
-        "x" : 250,
-        "y" : 935
+        "x" : 2464,
+        "y" : 90
       } ],
       "environment" : "Produkcja",
       "key" : "04b-wdrozenie-placowka",
       "name" : "Deployment View: System Opieki Zdrowotnej (SOZ) - Produkcja",
       "order" : 7,
       "relationships" : [ {
-        "id" : "176",
-        "vertices" : [ {
-          "x" : 2820,
-          "y" : 2665
-        }, {
-          "x" : 3230,
-          "y" : 2665
-        } ]
+        "id" : "176"
       }, {
         "id" : "230",
+        "position" : 35,
         "vertices" : [ {
-          "x" : 3230,
-          "y" : 610
+          "x" : 3829,
+          "y" : 1325
         } ]
       }, {
         "id" : "232",
+        "position" : 80,
         "vertices" : [ {
-          "x" : 4510,
-          "y" : 2315
-        }, {
-          "x" : 4920,
-          "y" : 610
+          "x" : 3829,
+          "y" : 1679
         } ]
       }, {
-        "id" : "249",
-        "vertices" : [ {
-          "x" : 1820,
-          "y" : 1125
-        } ]
+        "id" : "249"
       }, {
-        "id" : "250",
-        "vertices" : [ {
-          "x" : 2820,
-          "y" : 2237
-        }, {
-          "x" : 3230,
-          "y" : 2237
-        } ]
+        "id" : "250"
       }, {
         "id" : "251",
+        "position" : 25,
         "vertices" : [ {
-          "x" : 2820,
-          "y" : 2476
-        }, {
-          "x" : 3230,
-          "y" : 2476
+          "x" : 1349,
+          "y" : 980
         } ]
       } ],
       "softwareSystemId" : "12"
