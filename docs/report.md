@@ -50,6 +50,11 @@
     - [Obsługa pacjenta](#obsługa-pacjenta)
     - [Obsługa kliniczna](#obsługa-kliniczna)
   - [2.4. Diagram komponentów (C4 poziom 3)](#24-diagram-komponentów-c4-poziom-3)
+  - [2.5. Diagram wdrożenia](#25-diagram-wdrożenia)
+    - [Chmura](#chmura)
+    - [Placówka](#placówka)
+  - [2.6. Model danych](#26-model-danych)
+  - [2.7. Realizacja wymagań niefunkcjonalnych](#27-realizacja-wymagań-niefunkcjonalnych)
 
 
 ## 1. Analiza wymagań systemu SOZ
@@ -693,5 +698,45 @@ Do szczegółowego opisu wybrano usługę **Wizyty**:
 5. Dla wizyty prywatnej Rezerwacja terminu zleca płatność w usłudze Rozliczenia.
 6. Publikacja zdarzeń przekazuje informację o rezerwacji do kolejki. Zdarzenie zapisywane jest razem z rezerwacją, więc nie zostanie utracone nawet przy chwilowej awarii kolejki (NFR-NIE-06).
 7. Przypomnienia cyklicznie odczytują nadchodzące wizyty i publikują zdarzenia, na podstawie których usługa Powiadomienia wysyła przypomnienia (FR-WIZ-02).
+
+---
+
+### 2.5. Diagram wdrożenia
+
+System jest wdrożony w chmurze publicznej na terenie EOG (NFR-ZGO-04). Lokalnie w placówkach pozostają systemy HIS i LIS oraz węzeł awaryjny, więc całe rozwiązanie ma charakter hybrydowy. Wdrożenie przedstawiono w dwóch widokach: chmura oraz placówka.
+
+#### Chmura
+
+![Diagram wdrożenia - chmura](objects/04a-wdrozenie-chmura.svg)
+
+- Urządzenia użytkowników: przeglądarka pobiera portal i panele z hostingu aplikacji webowych (sieć CDN), a przeglądarka i aplikacja mobilna wywołują API przez równoważenie obciążenia.
+- Region podstawowy ma trzy strefy dostępności. Każda strefa zawiera pełny zestaw usług w klastrze kontenerów z autoskalowaniem (NFR-SKA-03), więc awaria jednej strefy nie przerywa pracy (NFR-NIE-01). Nowe wersje są wdrażane bez przestojów (NFR-DOS-05).
+- Dane: baza relacyjna ma węzeł główny w strefie A i repliki w strefach B i C. Magazyn obiektów ma warstwy gorącą i zimną (1.4.5). Hurtownia analityczna jest oddzielona od baz operacyjnych. Dziennik audytu jest w magazynie z blokadą modyfikacji.
+- Monitorowanie i logi zbierają metryki, ślady i logi ze wszystkich usług (NFR-MON-01..04).
+- Region zapasowy zawiera repliki bazy i magazynu obiektów, codzienne, szyfrowane i niemodyfikowalne kopie zapasowe (NFR-NIE-04) oraz klaster w gotowości. Po awarii regionu ruch jest przełączany do regionu zapasowego.
+
+| Klasa usług | Mechanizm przy awarii                         |
+| ----------- | --------------------------------------------- |
+| K1          | ciągła replikacja danych, klaster w gotowości |
+| K2          | ciągła replikacja danych, klaster w gotowości |
+| K3          | odtworzenie z codziennej kopii zapasowej      |
+
+#### Placówka
+
+![Diagram wdrożenia - placówka](objects/04b-wdrozenie-placowka.svg)
+
+Każda z 25 placówek łączy się z chmurą szyfrowanym tunelem VPN. Komunikaty z systemów HIS i LIS trafiają przez bramę VPN do usługi integracji. Węzeł awaryjny w placówce otrzymuje z usługi Wizyty plan dnia, dzięki czemu przy utracie łączności personel ma dostęp do listy wizyt i podstawowych danych pacjentów na bieżący dzień (NFR-DOS-06).
+
+---
+
+### 2.6. Model danych
+
+![Model danych SOZ](objects/05-model-danych.svg)
+
+Krotności relacji są podane na diagramie. Przyjęte uproszczenia:
+
+- Rola jest atrybutem pracownika, a nie osobną encją. Pracownik może mieć wiele ról i placówek (FR-IAM-02).
+- Dokument medyczny i wynik badania są wersjonowane. Korekta tworzy nową wersję, a poprzednia zostaje zachowana (FR-DOK-06, FR-ZLE-03).
+- Obrazy są przechowywane w magazynie obiektów, a encja Badanie obrazowe przechowuje opis i odwołania do nich.
 
 ---

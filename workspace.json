@@ -3,7 +3,7 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2026-11-26T22:46:37Z",
+  "lastModifiedDate" : "2026-11-26T22:54:45Z",
   "model" : {
     "customElements" : [ {
       "description" : "kto, kiedy, jakie dane",
@@ -275,7 +275,7 @@
           "id" : "157",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.b1d1aad3-cc1c-4d34-b5e3-490ec1a9c9b4"
+            "structurizr.dsl.identifier" : "prod.primary.web.faf345d9-fa23-4b1b-b460-22eaa657ecde"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -298,7 +298,7 @@
           "id" : "158",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.b4bfb2a7-1ad9-46d5-9a79-d9e64b7109c5"
+            "structurizr.dsl.identifier" : "prod.primary.web.8ee57b66-b9c8-4097-9b04-1f706026f81b"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -327,7 +327,7 @@
           "id" : "159",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.9204fc2f-0970-4a9d-8422-e56093a9a27f"
+            "structurizr.dsl.identifier" : "prod.primary.web.09ab49c8-4e53-455b-9f96-ac51218e9ee0"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -404,7 +404,7 @@
               "id" : "178",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.ffd986a1-b9d7-474e-b6e2-ea600bd40b16"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.326bd244-cd82-466a-a326-f5e9ea34932b"
               },
               "relationships" : [ {
                 "description" : "Zapisuje dane",
@@ -421,7 +421,7 @@
               "id" : "182",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.81220a48-d713-4730-88a7-99bbbc8419f9"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.4905668b-1c10-4e37-b098-282008382748"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -450,7 +450,7 @@
               "id" : "186",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.76c99cb3-a617-4c65-b7be-8d0370075999"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.0ebec5d0-f869-4820-abf6-138a79d26994"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -479,7 +479,7 @@
               "id" : "189",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.10cab925-0a77-483a-8ac6-0abc94ea2d40"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.4c7ecb5d-e309-4fa5-a1b1-1b094856e1b8"
               },
               "relationships" : [ {
                 "description" : "Przekazuje sprawozdania NFZ",
@@ -508,7 +508,7 @@
               "id" : "194",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.1b928cb8-77c5-4406-bf2a-59ba02cbe916"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.6809fd1a-5ca7-4b37-8f8c-1af39637f5be"
               },
               "relationships" : [ {
                 "description" : "Wysyła pilne alerty",
@@ -765,7 +765,7 @@
           "id" : "213",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.dwNode.ca930731-f1eb-48c3-a100-c7ce35f91ec9"
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.1de0cefb-da1d-4290-803f-6272c2154ed9"
           },
           "tags" : "Container Instance"
         } ],
@@ -939,7 +939,7 @@
           "id" : "229",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.fe6c51ee-94a9-4632-adee-a008f3b37b4c"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.5cc042c0-d742-4974-b8a4-285fff964f18"
           },
           "relationships" : [ {
             "description" : "Przesyła pobyty, dokumenty i obrazy",
@@ -956,7 +956,7 @@
           "id" : "231",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.aea9b466-cb8f-4064-86a3-3956b14d5d20"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.49fd038a-a872-47a2-bd94-177ead7f234a"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
