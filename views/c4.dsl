@@ -5,24 +5,24 @@ systemContext soz "01-kontekst" "C4 poziom 1 - System Opieki Zdrowotnej i jego o
     autoLayout tb 160 90
 }
 
-container soz "02-kontenery-przeglad" "C4 poziom 2 - przegląd kontenerów w pięciu warstwach. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b." {
+container soz "02-kontenery-przeglad" "C4 poziom 2 - przegląd kontenerów w pięciu warstwach, w tym jedyny widok warstwy danych. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b." {
     include patient doctor staff
     include "element.parent==soz"
     exclude "relationship.tag==Szczegół"
 }
 
-container soz "02a-kontenery-pacjent" "C4 poziom 2 - obsługa pacjenta: wizyty, teleporady, płatności, powiadomienia." {
+container soz "02a-kontenery-pacjent" "C4 poziom 2 - obsługa pacjenta: wizyty, teleporady, płatności, powiadomienia. Bez warstwy danych (zob. 02)." {
     include patient
     include soz.patientPortal soz.mobileApp soz.apiGateway soz.identity
     include soz.appointments soz.telehealth soz.billing soz.notifications soz.eventQueue
-    include soz.integration soz.database
+    include soz.integration
     include nationalNode paymentGateway messaging nfz
 }
 
-container soz "02b-kontenery-klinika" "C4 poziom 2 - obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami." {
+container soz "02b-kontenery-klinika" "C4 poziom 2 - obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami. Bez warstwy danych (zob. 02)." {
     include doctor
     include soz.doctorPanel soz.apiGateway soz.records soz.orders soz.notifications
-    include soz.eventQueue soz.integration soz.blobStore soz.database
+    include soz.eventQueue soz.integration
     include his lis p1 externalFacilities
 }
 

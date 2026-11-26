@@ -71,7 +71,7 @@ soz.billing -> soz.integration "Przekazuje sprawozdania NFZ" {
     tags "Szczegół"
 }
 
-# ---------- Dane (bez tagu "Szczegół" - baza widoczna także w przeglądzie L2) ----------
+# ---------- Dane (bez tagu "Szczegół" - warstwa danych jest pokazana tylko w przeglądzie L2, widoki 02a i 02b ją pomijają) ----------
 soz.appointments -> soz.database "Zapisuje dane"
 soz.telehealth -> soz.database "Zapisuje dane"
 soz.records -> soz.database "Zapisuje dane"
@@ -83,16 +83,10 @@ soz.identity -> soz.database "Zapisuje dane"
 soz.identity -> soz.auditLog "Rejestruje dostęp do danych" {
     tags "Infrastruktura"
 }
-soz.records -> soz.blobStore "Przechowuje dokumenty" {
-    tags "Szczegół"
-}
-soz.orders -> soz.blobStore "Przechowuje wyniki PDF" {
-    tags "Szczegół"
-}
+soz.records -> soz.blobStore "Przechowuje dokumenty"
+soz.orders -> soz.blobStore "Przechowuje wyniki PDF"
 soz.integration -> soz.blobStore "Archiwizuje obrazy"
-soz.doctorPanel -> soz.blobStore "Wyświetla obrazy diagnostyczne" {
-    tags "Szczegół"
-}
+soz.doctorPanel -> soz.blobStore "Wyświetla obrazy diagnostyczne"
 
 # ---------- Monitorowanie (jedna strzałka reprezentuje telemetrię wszystkich usług) ----------
 soz.apiGateway -> soz.monitoring "Wysyła metryki, logi i ślady" {

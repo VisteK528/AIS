@@ -3,9 +3,9 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr/diagrams/6a1c9c71-dc2a-49c9-be80-4c17d06becf5",
-  "lastModifiedDate" : "2026-11-26T18:53:33Z",
-  "lastModifiedUser" : "822919721",
+  "lastModifiedAgent" : "structurizr/diagrams/3c6c698f-1120-4a6d-a132-b35cf704df0e",
+  "lastModifiedDate" : "2026-11-26T20:11:33Z",
+  "lastModifiedUser" : "1512377975",
   "model" : {
     "customElements" : [ {
       "description" : "PESEL, dane osobowe, kontakt",
@@ -277,7 +277,7 @@
           "id" : "157",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.fee3930f-b1b5-46ab-bb57-6f0e0ecdc197"
+            "structurizr.dsl.identifier" : "prod.primary.web.261866ae-1242-4806-83d5-e8cb876cbb5f"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -300,7 +300,7 @@
           "id" : "158",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.d8761dfd-7190-43c1-8020-1718d9ef3225"
+            "structurizr.dsl.identifier" : "prod.primary.web.1bdcbccb-f1a3-48ef-8e2f-4cdcf276f6fb"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -329,7 +329,7 @@
           "id" : "159",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.0a913302-9065-45b5-92d6-b7bbe0f90169"
+            "structurizr.dsl.identifier" : "prod.primary.web.fa0f7339-1a6b-4347-a7d4-ee03abf8cadb"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -406,7 +406,7 @@
               "id" : "178",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.552d943f-e4bd-47b8-b124-130071eb134a"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.be93f381-445f-4d3d-a681-10ab9387b9c9"
               },
               "relationships" : [ {
                 "description" : "Zapisuje dane",
@@ -423,7 +423,7 @@
               "id" : "182",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.440a39c6-ed4f-4329-8fe3-3d120dd0f5bf"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.7c05b091-4b5d-4b14-bf17-294def704d78"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -452,7 +452,7 @@
               "id" : "186",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.e157d066-cb15-4bb3-9894-ca255bc282ee"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.1509c0de-9a1d-4e77-9f61-b4b3efecf703"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -481,7 +481,7 @@
               "id" : "189",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.39a3fbef-ca69-462c-ba00-52b59e532772"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.19cbe3bc-ceb9-47d8-b47d-715baeb60519"
               },
               "relationships" : [ {
                 "description" : "Przekazuje sprawozdania NFZ",
@@ -510,7 +510,7 @@
               "id" : "194",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.f1d6938c-52ca-4442-8702-af0650621dee"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.be88e20e-45c9-4a82-af41-d3a4e945cd2a"
               },
               "relationships" : [ {
                 "description" : "Wysyła pilne alerty",
@@ -767,7 +767,7 @@
           "id" : "213",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.dwNode.b191c34d-8e63-4989-8274-12ca09b2a720"
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.92e64bf2-e20a-4970-b869-f29c89f70de9"
           },
           "tags" : "Container Instance"
         } ],
@@ -941,7 +941,7 @@
           "id" : "229",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.5656ddb0-1ba0-48d9-bf7f-528a824f2b0d"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.0a9167d4-ed35-4cd5-b475-d1ded5d7dc26"
           },
           "relationships" : [ {
             "description" : "Przesyła pobyty, dokumenty i obrazy",
@@ -958,7 +958,7 @@
           "id" : "231",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.4d12a0e0-d0e9-46d3-a1b4-14b6e600967d"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.bcf185fd-b308-4552-9b02-53e5ff685a95"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -1322,7 +1322,7 @@
           "destinationId" : "34",
           "id" : "116",
           "sourceId" : "15",
-          "tags" : "Relationship,Szczegół"
+          "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Przeglądarka"
       }, {
@@ -1630,7 +1630,7 @@
           "destinationId" : "34",
           "id" : "113",
           "sourceId" : "27",
-          "tags" : "Relationship,Szczegół"
+          "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       }, {
@@ -1661,7 +1661,7 @@
           "destinationId" : "34",
           "id" : "114",
           "sourceId" : "28",
-          "tags" : "Relationship,Szczegół"
+          "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       }, {
@@ -2126,7 +2126,7 @@
       } ]
     } ],
     "configuration" : {
-      "lastSavedView" : "02a-kontenery-pacjent",
+      "lastSavedView" : "02b-kontenery-klinika",
       "metadataSymbols" : "SquareBrackets",
       "properties" : {
         "structurizr.metadata" : "false"
@@ -2238,7 +2238,7 @@
       }
     },
     "containerViews" : [ {
-      "description" : "C4 poziom 2 - przegląd kontenerów w pięciu warstwach. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b.",
+      "description" : "C4 poziom 2 - przegląd kontenerów w pięciu warstwach, w tym jedyny widok warstwy danych. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b.",
       "dimensions" : {
         "height" : 6487,
         "width" : 4821
@@ -2396,8 +2396,14 @@
           "y" : 5429
         } ]
       }, {
+        "id" : "113"
+      }, {
+        "id" : "114"
+      }, {
         "id" : "115",
         "position" : 47
+      }, {
+        "id" : "116"
       }, {
         "id" : "117",
         "position" : 58,
@@ -2513,75 +2519,71 @@
       } ],
       "softwareSystemId" : "12"
     }, {
-      "description" : "C4 poziom 2 - obsługa pacjenta: wizyty, teleporady, płatności, powiadomienia.",
+      "description" : "C4 poziom 2 - obsługa pacjenta: wizyty, teleporady, płatności, powiadomienia. Bez warstwy danych (zob. 02).",
       "dimensions" : {
-        "height" : 6503,
-        "width" : 6175
+        "height" : 6238,
+        "width" : 4375
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 2871,
-        "y" : 190
+        "x" : 2075,
+        "y" : -3
       }, {
         "id" : "7",
-        "x" : 1345,
-        "y" : 3590
+        "x" : -1,
+        "y" : 5377
       }, {
         "id" : "8",
-        "x" : 40,
-        "y" : 2640
+        "x" : -1,
+        "y" : 1037
       }, {
         "id" : "9",
-        "x" : 4734,
-        "y" : 4205
+        "x" : -1,
+        "y" : 4077
       }, {
         "id" : "10",
-        "x" : 5074,
-        "y" : 5400
+        "x" : -1,
+        "y" : 2272
       }, {
         "id" : "13",
-        "x" : 3681,
-        "y" : 1382
+        "x" : 2949,
+        "y" : 1174
       }, {
         "id" : "14",
-        "x" : 2499,
-        "y" : 1305
+        "x" : 1534,
+        "y" : 1107
       }, {
         "id" : "17",
-        "x" : 3029,
-        "y" : 2620
+        "x" : 3398,
+        "y" : 3872
       }, {
         "id" : "26",
-        "x" : 4219,
-        "y" : 2600
+        "x" : 2763,
+        "y" : 3052
       }, {
         "id" : "29",
-        "x" : 3764,
-        "y" : 3440
+        "x" : 2048,
+        "y" : 3872
       }, {
         "id" : "30",
-        "x" : 4019,
-        "y" : 5495
+        "x" : 1473,
+        "y" : 3042
       }, {
         "id" : "31",
-        "x" : 1560,
-        "y" : 4555
+        "x" : 1483,
+        "y" : 5497
       }, {
         "id" : "32",
-        "x" : 1570,
-        "y" : 5280
-      }, {
-        "id" : "33",
-        "x" : 3054,
-        "y" : 5570
+        "x" : 3403,
+        "y" : 5492
       }, {
         "id" : "37",
-        "x" : 1264,
-        "y" : 1830
+        "x" : 2538,
+        "y" : 2152
       }, {
         "id" : "38",
-        "x" : 1299,
-        "y" : 2780
+        "x" : 1094,
+        "y" : 2137
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "02a-kontenery-pacjent",
@@ -2592,175 +2594,200 @@
       }, {
         "id" : "101"
       }, {
-        "id" : "102"
+        "id" : "102",
+        "position" : 45,
+        "vertices" : [ {
+          "x" : 3258,
+          "y" : 4862
+        }, {
+          "x" : 2518,
+          "y" : 4862
+        } ]
       }, {
         "id" : "104",
-        "position" : 16,
+        "position" : 76,
         "vertices" : [ {
-          "x" : 3259,
-          "y" : 4225
+          "x" : 1848,
+          "y" : 5047
         } ]
       }, {
-        "id" : "105"
-      }, {
-        "id" : "106",
+        "id" : "118",
         "vertices" : [ {
-          "x" : 4579,
-          "y" : 4995
+          "x" : 1433,
+          "y" : 2002
         } ]
-      }, {
-        "id" : "109",
-        "vertices" : [ {
-          "x" : 4054,
-          "y" : 4990
-        } ]
-      }, {
-        "id" : "110"
-      }, {
-        "id" : "111"
-      }, {
-        "id" : "118"
       }, {
         "id" : "120",
         "routing" : "Direct",
         "vertices" : [ {
-          "x" : 4434,
-          "y" : 4885
+          "x" : 1608,
+          "y" : 4097
         } ]
       }, {
-        "id" : "122"
+        "id" : "122",
+        "position" : 55,
+        "vertices" : [ {
+          "x" : 1243,
+          "y" : 3267
+        } ]
       }, {
         "id" : "130"
       }, {
-        "id" : "136"
+        "id" : "136",
+        "position" : 15,
+        "vertices" : [ {
+          "x" : 2324,
+          "y" : 3482
+        }, {
+          "x" : 2324,
+          "y" : 3102
+        } ]
       }, {
         "id" : "72",
+        "position" : 60,
         "vertices" : [ {
-          "x" : 4041,
-          "y" : 840
+          "x" : 3309,
+          "y" : 582
         } ]
       }, {
         "id" : "74",
-        "position" : 71,
+        "position" : 66,
         "vertices" : [ {
-          "x" : 2724,
-          "y" : 855
+          "x" : 1759,
+          "y" : 582
         } ]
       }, {
         "id" : "79",
+        "position" : 65,
         "vertices" : [ {
-          "x" : 2790,
-          "y" : 2055
+          "x" : 3309,
+          "y" : 1762
         } ]
       }, {
-        "id" : "80"
+        "id" : "80",
+        "position" : 60,
+        "vertices" : [ {
+          "x" : 2395,
+          "y" : 1407
+        } ]
       }, {
         "id" : "83"
       }, {
         "id" : "84",
-        "position" : 42
-      }, {
-        "id" : "85",
+        "position" : 87,
         "vertices" : [ {
-          "x" : 3684,
-          "y" : 2455
+          "x" : 3758,
+          "y" : 2822
         } ]
       }, {
+        "id" : "85",
+        "position" : 50
+      }, {
         "id" : "88",
-        "position" : 23,
+        "position" : 88,
         "vertices" : [ {
-          "x" : 3209,
-          "y" : 3680
+          "x" : 2408,
+          "y" : 3112
         } ]
       }, {
         "id" : "90",
-        "position" : 53,
+        "position" : 48,
         "vertices" : [ {
-          "x" : 4579,
-          "y" : 2275
+          "x" : 3779,
+          "y" : 2287
+        }, {
+          "x" : 3779,
+          "y" : 2397
         } ]
       }, {
         "id" : "91",
-        "position" : 53
+        "position" : 70,
+        "vertices" : [ {
+          "x" : 2224,
+          "y" : 1082
+        }, {
+          "x" : 4119,
+          "y" : 1082
+        }, {
+          "x" : 4119,
+          "y" : 2412
+        } ]
       }, {
         "id" : "93",
-        "position" : 82,
-        "vertices" : [ {
-          "x" : 2964,
-          "y" : 4520
-        }, {
-          "x" : 2964,
-          "y" : 4660
-        } ]
+        "position" : 37
       }, {
         "id" : "96",
-        "position" : 30,
+        "position" : 35,
         "vertices" : [ {
-          "x" : 3514,
-          "y" : 4930
+          "x" : 2528,
+          "y" : 4627
+        }, {
+          "x" : 3258,
+          "y" : 4627
         } ]
       }, {
-        "id" : "98"
+        "id" : "98",
+        "position" : 20,
+        "vertices" : [ {
+          "x" : 1843,
+          "y" : 4737
+        } ]
       } ],
       "softwareSystemId" : "12"
     }, {
-      "description" : "C4 poziom 2 - obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami.",
+      "description" : "C4 poziom 2 - obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami. Bez warstwy danych (zob. 02).",
+      "dimensions" : {
+        "height" : 4858,
+        "width" : 4467
+      },
       "elements" : [ {
         "id" : "2",
-        "x" : 0,
-        "y" : 0
+        "x" : 2447,
+        "y" : 190
       }, {
         "id" : "4",
-        "x" : 0,
-        "y" : 0
+        "x" : 207,
+        "y" : 1370
       }, {
         "id" : "5",
-        "x" : 0,
-        "y" : 0
+        "x" : 207,
+        "y" : 3925
       }, {
         "id" : "6",
-        "x" : 0,
-        "y" : 0
+        "x" : 207,
+        "y" : 2715
       }, {
         "id" : "11",
-        "x" : 0,
-        "y" : 0
+        "x" : 207,
+        "y" : 350
       }, {
         "id" : "15",
-        "x" : 0,
-        "y" : 0
+        "x" : 2537,
+        "y" : 1365
       }, {
         "id" : "27",
-        "x" : 0,
-        "y" : 0
+        "x" : 2972,
+        "y" : 3295
       }, {
         "id" : "28",
-        "x" : 0,
-        "y" : 0
+        "x" : 3447,
+        "y" : 3845
       }, {
         "id" : "30",
-        "x" : 0,
-        "y" : 0
+        "x" : 2527,
+        "y" : 2735
       }, {
         "id" : "31",
-        "x" : 0,
-        "y" : 0
+        "x" : 1622,
+        "y" : 2110
       }, {
         "id" : "32",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "33",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "34",
-        "x" : 0,
-        "y" : 0
+        "x" : 1582,
+        "y" : 3925
       }, {
         "id" : "37",
-        "x" : 0,
-        "y" : 0
+        "x" : 3112,
+        "y" : 2020
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "02b-kontenery-klinika",
@@ -2771,27 +2798,33 @@
       }, {
         "id" : "103"
       }, {
-        "id" : "107"
+        "id" : "124",
+        "position" : 49,
+        "vertices" : [ {
+          "x" : 1212,
+          "y" : 1665
+        } ]
       }, {
-        "id" : "108"
+        "id" : "126",
+        "position" : 37,
+        "vertices" : [ {
+          "x" : 1317,
+          "y" : 4220
+        } ]
       }, {
-        "id" : "110"
+        "id" : "128",
+        "position" : 52,
+        "vertices" : [ {
+          "x" : 1257,
+          "y" : 3010
+        } ]
       }, {
-        "id" : "113"
-      }, {
-        "id" : "114"
-      }, {
-        "id" : "115"
-      }, {
-        "id" : "116"
-      }, {
-        "id" : "124"
-      }, {
-        "id" : "126"
-      }, {
-        "id" : "128"
-      }, {
-        "id" : "132"
+        "id" : "132",
+        "position" : 53,
+        "vertices" : [ {
+          "x" : 1282,
+          "y" : 645
+        } ]
       }, {
         "id" : "75"
       }, {
