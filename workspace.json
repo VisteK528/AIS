@@ -3,8 +3,8 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr/diagrams/d4e5c442-36eb-4369-a303-e99de2bfc2b5",
-  "lastModifiedDate" : "2026-11-26T22:23:16Z",
+  "lastModifiedAgent" : "structurizr/diagrams/1c80b2ae-a16f-41af-a650-064b040fe5a1",
+  "lastModifiedDate" : "2026-11-26T22:44:45Z",
   "lastModifiedUser" : "496056570",
   "model" : {
     "customElements" : [ {
@@ -2173,7 +2173,7 @@
       } ]
     } ],
     "configuration" : {
-      "lastSavedView" : "04b-wdrozenie-placowka",
+      "lastSavedView" : "05-model-danych",
       "metadataSymbols" : "SquareBrackets",
       "properties" : {
         "structurizr.metadata" : "false"
@@ -2903,66 +2903,70 @@
     } ],
     "customViews" : [ {
       "description" : "Diagram encji - główne dane systemu i relacje między nimi.",
+      "dimensions" : {
+        "height" : 3525,
+        "width" : 3329
+      },
       "elements" : [ {
         "id" : "40",
-        "x" : 0,
-        "y" : 0
+        "x" : 403,
+        "y" : 1418
       }, {
         "id" : "41",
-        "x" : 0,
-        "y" : 0
+        "x" : 1433,
+        "y" : 3184
       }, {
         "id" : "42",
-        "x" : 0,
-        "y" : 0
+        "x" : 568,
+        "y" : 2938
       }, {
         "id" : "43",
-        "x" : 0,
-        "y" : 0
+        "x" : 1653,
+        "y" : 2419
       }, {
         "id" : "44",
-        "x" : 0,
-        "y" : 0
+        "x" : 2688,
+        "y" : 2929
       }, {
         "id" : "45",
-        "x" : 0,
-        "y" : 0
+        "x" : 1782,
+        "y" : 1728
       }, {
         "id" : "46",
-        "x" : 0,
-        "y" : 0
+        "x" : 1473,
+        "y" : 848
       }, {
         "id" : "47",
-        "x" : 0,
-        "y" : 0
+        "x" : 2003,
+        "y" : 43
       }, {
         "id" : "48",
-        "x" : 0,
-        "y" : 0
+        "x" : 813,
+        "y" : 2174
       }, {
         "id" : "49",
-        "x" : 0,
-        "y" : 0
+        "x" : 2698,
+        "y" : 1484
       }, {
         "id" : "50",
-        "x" : 0,
-        "y" : 0
+        "x" : 2548,
+        "y" : 669
       }, {
         "id" : "51",
-        "x" : 0,
-        "y" : 0
+        "x" : 2563,
+        "y" : 2224
       }, {
         "id" : "52",
-        "x" : 0,
-        "y" : 0
+        "x" : 413,
+        "y" : 699
       }, {
         "id" : "53",
-        "x" : 0,
-        "y" : 0
+        "x" : 943,
+        "y" : 39
       }, {
         "id" : "54",
-        "x" : 0,
-        "y" : 0
+        "x" : 49,
+        "y" : 2204
       } ],
       "key" : "05-model-danych",
       "name" : "Custom View: Model danych",
@@ -2972,7 +2976,8 @@
       }, {
         "id" : "56"
       }, {
-        "id" : "57"
+        "id" : "57",
+        "position" : 74
       }, {
         "id" : "58"
       }, {
@@ -2982,7 +2987,8 @@
       }, {
         "id" : "61"
       }, {
-        "id" : "62"
+        "id" : "62",
+        "position" : 15
       }, {
         "id" : "63"
       }, {
