@@ -36,23 +36,19 @@ component soz.appointments "03-komponenty-wizyty" "C4 poziom 3 - komponenty usł
     exclude "soz.billing -> soz.integration"
     exclude "soz.identity -> soz.database"
     exclude "soz.integration -> soz.eventQueue"
-    autoLayout tb 160 90
 }
 
 deployment soz prod "04a-wdrozenie-chmura" "Wdrożenie - urządzenia użytkowników, region podstawowy z trzema strefami dostępności i region zapasowy w EOG." {
     include prod.users prod.primary prod.dr
     exclude prod.facility
     exclude "relationship.tag!=Infrastruktura"
-    autoLayout tb 160 90
 }
 
 deployment soz prod "04b-wdrozenie-placowka" "Wdrożenie - placówka i jej połączenie z chmurą." {
     include prod.facility
     include prod.primary.vpnHub prod.primary.az.cluster.intInst prod.primary.az.cluster.services.apptInst
-    autoLayout tb 160 90
 }
 
 custom "05-model-danych" "Model danych" "Diagram encji - główne dane systemu i relacje między nimi." {
     include "element.tag==Encja"
-    autoLayout tb 160 90
 }
