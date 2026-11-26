@@ -9,6 +9,8 @@ services:
     volumes:
       - ./:/usr/local/structurizr
     environment:
-      - STRUCTURIZR_AUTOREFRESHINTERVAL=2000
+      - STRUCTURIZR_AUTOREFRESHINTERVAL=10000   # 0 to turn it off and refresh manually
+      - STRUCTURIZR_AUTOSAVEINTERVAL=30000
+      - STRUCTURIZR_SEARCH=none                 # skip the Lucene index - no search
       - STRUCTURIZR_EDITABLE=true
     restart: unless-stopped
