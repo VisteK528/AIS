@@ -54,7 +54,6 @@
     - [Chmura](#chmura)
     - [Placówka](#placówka)
   - [2.6. Model danych](#26-model-danych)
-  - [2.7. Realizacja wymagań niefunkcjonalnych](#27-realizacja-wymagań-niefunkcjonalnych)
 
 
 ## 1. Analiza wymagań systemu SOZ
