@@ -1,10 +1,11 @@
-# Model danych – diagram encji (poza C4) jako elementy niestandardowe. Szczegóły: docs/data_model.md.
+# Model danych - diagram encji (poza C4) jako elementy niestandardowe. Szczegóły: docs/data_model.md.
 
 group "Model danych" {
     ePatient = element "Pacjent" "Encja" "PESEL, dane osobowe, kontakt" "Encja"
     eFacility = element "Placówka" "Encja" "nazwa, typ, adres, cennik" "Encja"
-    eStaff = element "Pracownik" "Encja" "nr PWZ, specjalizacja, role" "Encja"
+    eStaff = element "Pracownik" "Encja" "nr PWZ, specjalizacja, role (lekarz, pielęgniarka, ...)" "Encja"
     eSchedule = element "Grafik" "Encja" "godziny pracy, tryb wizyt" "Encja"
+    eResource = element "Zasób" "Encja" "gabinet / sprzęt, typ, dostępność" "Encja"
     eSlot = element "Termin" "Encja" "początek, koniec, status" "Encja"
     eVisit = element "Wizyta" "Encja" "typ, status, finansowanie (NFZ / prywatne)" "Encja"
     eTele = element "Telekonsultacja" "Encja" "tryb (wideo / czat), status" "Encja"
@@ -22,6 +23,8 @@ ePatient -> eConsent "udziela (1:N)"
 ePatient -> eDoc "posiada (1:N)"
 eFacility -> eSchedule "prowadzi (1:N)"
 eStaff -> eSchedule "pracuje wg (1:N)"
+eFacility -> eResource "posiada (1:N)"
+eSchedule -> eResource "wykorzystuje (N:M)"
 eSchedule -> eSlot "dzieli się na (1:N)"
 eSlot -> eVisit "rezerwowany przez (1:0..1)"
 eVisit -> eTele "odbywa się jako (1:0..1)"

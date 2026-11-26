@@ -301,15 +301,15 @@ Wymagania dotyczące dostępności i odtwarzania po awarii określono dla trzech
 
 | Klasa                               | Usługi                                                                                                                    | Dostępność                     | RPO   | RTO  |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------ | ----- | ---- |
-| **K1 – usługi kliniczne krytyczne** | dokumentacja medyczna, zlecenia i wyniki badań (w tym powiadomienia o wynikach krytycznych), integracja z HIS, LIS i PACS | 99,95% (24/7)                  | 5 min | 1 h  |
-| **K2 – usługi dla pacjentów**       | portal i aplikacja mobilna, wizyty, telekonsultacje, powiadomienia dla pacjentów, płatności                               | 99,9% (24/7)                   | 5 min | 4 h  |
-| **K3 – usługi wspierające**         | rozliczenia z NFZ, analityka i raportowanie                                                                               | 99,5% (dni robocze 7:00–19:00) | 24 h  | 24 h |
+| **K1 - usługi kliniczne krytyczne** | dokumentacja medyczna, zlecenia i wyniki badań (w tym powiadomienia o wynikach krytycznych), integracja z HIS, LIS i PACS | 99,95% (24/7)                  | 5 min | 1 h  |
+| **K2 - usługi dla pacjentów**       | portal i aplikacja mobilna, wizyty, telekonsultacje, powiadomienia dla pacjentów, płatności                               | 99,9% (24/7)                   | 5 min | 4 h  |
+| **K3 - usługi wspierające**         | rozliczenia z NFZ, analityka i raportowanie                                                                               | 99,5% (dni robocze 7:00-19:00) | 24 h  | 24 h |
 
 #### 1.3.1. Dostępność (NFR-DOS)
 
 - **NFR-DOS-01**: Usługi K1 muszą być dostępne w trybie 24/7 na poziomie co najmniej 99,95% w skali miesiąca.
 - **NFR-DOS-02**: Usługi K2 muszą być dostępne w trybie 24/7 na poziomie co najmniej 99,9% w skali miesiąca.
-- **NFR-DOS-03**: Usługi K3 muszą być dostępne na poziomie co najmniej 99,5% w dni robocze w godzinach 7:00–19:00.
+- **NFR-DOS-03**: Usługi K3 muszą być dostępne na poziomie co najmniej 99,5% w dni robocze w godzinach 7:00-19:00.
 - **NFR-DOS-04**: Awaria jednej usługi (np. rozliczeń lub analityki) nie może powodować niedostępności pozostałych usług.
 - **NFR-DOS-05**: Wdrażanie nowych wersji i prace serwisowe nie mogą powodować przerw w działaniu usług K1 i K2.
 - **NFR-DOS-06**: W przypadku utraty łączności z platformą placówka musi mieć w trybie awaryjnym dostęp do listy wizyt i podstawowych danych pacjentów na bieżący dzień.
@@ -344,7 +344,7 @@ Wymagania dotyczące dostępności i odtwarzania po awarii określono dla trzech
 
 - **NFR-BEZ-01**: Uwierzytelnianie musi być realizowane przez centralną usługę tożsamości (OAuth 2.0, OpenID Connect) z jednokrotnym logowaniem (SSO) personelu we wszystkich placówkach.
 - **NFR-BEZ-02**: Personel musi logować się z użyciem uwierzytelniania wieloskładnikowego (MFA), a jego sesja musi wygasać po 15 min bezczynności.
-- **NFR-BEZ-03**: Autoryzacja musi być weryfikowana po stronie serwera przy każdym żądaniu, na podstawie roli użytkownika, placówki i relacji lekarz–pacjent, zgodnie z zasadą najmniejszych uprawnień.
+- **NFR-BEZ-03**: Autoryzacja musi być weryfikowana po stronie serwera przy każdym żądaniu, na podstawie roli użytkownika, placówki i relacji lekarz-pacjent, zgodnie z zasadą najmniejszych uprawnień.
 - **NFR-BEZ-04**: System musi zapewniać dostęp w trybie nadzwyczajnym („break-the-glass”) do dokumentacji pacjenta w stanie zagrożenia życia. Taki dostęp wymaga podania uzasadnienia i jest oznaczany w dzienniku audytu.
 - **NFR-BEZ-05**: Dane muszą być szyfrowane podczas przesyłania (TLS 1.2 lub nowszy) oraz przechowywania (AES-256), a klucze przechowywane w dedykowanej usłudze zarządzania kluczami.
 - **NFR-BEZ-06**: Transmisja telekonsultacji musi być szyfrowana, a dostęp do sesji możliwy wyłącznie dla uwierzytelnionych uczestników.
@@ -476,7 +476,7 @@ Szacunek bazowy przyjmuje horyzont 5 lat. Ustawa o prawach pacjenta wymaga jedna
 | 20 lat   | ~32 TB                                   | ~30 TB       | ~535 TB             | ~1,1 PB           |
 
 Wnioski z tego szacunku:
-- Przy pełnej retencji archiwum obrazów osiąga skalę petabajtową. Konieczny jest więc magazyn obiektowy z politykami cyklu życia: warstwa gorąca na ostatnie 1–2 lata, a starsze badania w warstwie zimnej lub archiwalnej.
+- Przy pełnej retencji archiwum obrazów osiąga skalę petabajtową. Konieczny jest więc magazyn obiektowy z politykami cyklu życia: warstwa gorąca na ostatnie 1-2 lata, a starsze badania w warstwie zimnej lub archiwalnej.
 - Starsze dane strukturalne powinny być przenoszone z głównej bazy transakcyjnej do archiwum, tak aby baza operacyjna przechowywała tylko dane z ostatnich lat i mieściła się w przyjętych 8 TB na węzeł.
 - Okresy retencji poszczególnych kategorii danych (np. zdjęć RTG przechowywanych poza dokumentacją, logów audytowych) wymagają potwierdzenia z działem prawnym.
 
@@ -494,12 +494,12 @@ Telemedycyna dominuje w ruchu sieciowym, dlatego serwery mediów skalujemy nieza
 
 | Warstwa            | Szacunek                                                                                                                                                                            |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| API                | 100–150 RPS na instancję (4 vCPU), czyli ok. 6 instancji na 750 RPS. Po 6 w każdej z 2 stref dostępności (NFR-NIE-01) daje to 12 instancji                                          |
-| Baza danych        | PostgreSQL, 1 primary i 2 repliki, 8–16 vCPU, 64 GB RAM, 8 TB dysku na węzeł                                                                                                        |
+| API                | 100-150 RPS na instancję (4 vCPU), czyli ok. 6 instancji na 750 RPS. Po 6 w każdej z 2 stref dostępności (NFR-NIE-01) daje to 12 instancji                                          |
+| Baza danych        | PostgreSQL, 1 primary i 2 repliki, 8-16 vCPU, 64 GB RAM, 8 TB dysku na węzeł                                                                                                        |
 | Log audytowy       | magazyn append-only z blokadą WORM, ok. 6 TB w 5 lat (plus kopia DR)                                                                                                                |
 | Telemedycyna       | 300 sesji × 2 uczestników = 600 uczestników, po 150 na instancję serwera mediów, czyli 4 instancje i 1 zapasowa                                                                     |
 | Obrazy             | ok. 200 TB w magazynie obiektowym (horyzont 5 lat, z kopią DR), z warstwą gorącą i zimną                                                                                            |
-| Hurtownia danych   | 8 vCPU, 32–64 GB RAM, 10 TB                                                                                                                                                         |
+| Hurtownia danych   | 8 vCPU, 32-64 GB RAM, 10 TB                                                                                                                                                         |
 | Kolejka integracji | 3 węzły, ok. 1 mln komunikatów dziennie (ok. 0,15 mln z integracji zewnętrznych i ok. 0,9 mln zdarzeń domenowych), czyli średnio ok. 12, a w szczycie ok. 40 komunikatów na sekundę |
 
 #### 1.4.8. Wnioski ze szacowania
@@ -524,7 +524,7 @@ Poniższa macierz pokazuje, że każdy zidentyfikowany problem interesariusza je
 | Trudności z umawianiem wizyt            | FR-WIZ-01, FR-WIZ-03, FR-WIZ-04, FR-WIZ-05, FR-TEL-01, NFR-UZY-03 |
 | Rozproszenie dokumentacji medycznej     | FR-DOK-01, FR-DOK-02, FR-INT-01, FR-INT-03                        |
 | Brak łatwego dostępu do wyników badań   | FR-ZLE-04, FR-ZLE-05, NFR-WYD-03                                  |
-| Ograniczony dostęp do lekarzy           | FR-TEL-01 – FR-TEL-09, NFR-WYD-04                                 |
+| Ograniczony dostęp do lekarzy           | FR-TEL-01 - FR-TEL-09, NFR-WYD-04                                 |
 | Brak przejrzystej informacji o leczeniu | FR-DOK-01, FR-DOK-07, FR-ZLE-04, FR-WIZ-02, FR-TEL-02             |
 | Obawy o bezpieczeństwo danych           | FR-IAM-01, FR-IAM-04, FR-IAM-05, FR-IAM-06, NFR-BEZ-05            |
 

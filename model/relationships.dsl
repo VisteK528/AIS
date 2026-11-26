@@ -1,4 +1,4 @@
-# Relacje – krótkie etykiety, bez technologii.
+# Relacje - krótkie etykiety, bez technologii.
 # Tag "Szczegół": relacje pomijane w widoku przeglądowym L2, widoczne w widokach szczegółowych.
 # Relacje L1 (system <-> otoczenie) są wyprowadzane automatycznie z relacji kontenerów.
 
@@ -67,27 +67,21 @@ soz.notifications -> soz.doctorPanel "Wysyła pilne alerty" {
     tags "Szczegół"
 }
 
-# ---------- Dane ----------
-soz.appointments -> soz.database "Zapisuje dane" {
+soz.billing -> soz.integration "Przekazuje sprawozdania NFZ" {
     tags "Szczegół"
 }
-soz.telehealth -> soz.database "Zapisuje dane" {
-    tags "Szczegół"
-}
-soz.records -> soz.database "Zapisuje dane" {
-    tags "Szczegół"
-}
-soz.orders -> soz.database "Zapisuje dane" {
-    tags "Szczegół"
-}
-soz.billing -> soz.database "Zapisuje dane" {
-    tags "Szczegół"
-}
-soz.notifications -> soz.database "Zapisuje dane" {
-    tags "Szczegół"
-}
-soz.identity -> soz.database "Zapisuje dane" {
-    tags "Szczegół"
+
+# ---------- Dane (bez tagu "Szczegół" - baza widoczna także w przeglądzie L2) ----------
+soz.appointments -> soz.database "Zapisuje dane"
+soz.telehealth -> soz.database "Zapisuje dane"
+soz.records -> soz.database "Zapisuje dane"
+soz.orders -> soz.database "Zapisuje dane"
+soz.billing -> soz.database "Zapisuje dane"
+soz.notifications -> soz.database "Zapisuje dane"
+soz.identity -> soz.database "Zapisuje dane"
+# Tag "Infrastruktura" - relacja widoczna też w widoku wdrożenia 04a.
+soz.identity -> soz.auditLog "Rejestruje dostęp do danych" {
+    tags "Infrastruktura"
 }
 soz.records -> soz.blobStore "Przechowuje dokumenty" {
     tags "Szczegół"
@@ -96,6 +90,14 @@ soz.orders -> soz.blobStore "Przechowuje wyniki PDF" {
     tags "Szczegół"
 }
 soz.integration -> soz.blobStore "Archiwizuje obrazy"
+soz.doctorPanel -> soz.blobStore "Wyświetla obrazy diagnostyczne" {
+    tags "Szczegół"
+}
+
+# ---------- Monitorowanie (jedna strzałka reprezentuje telemetrię wszystkich usług) ----------
+soz.apiGateway -> soz.monitoring "Wysyła metryki, logi i ślady" {
+    tags "Infrastruktura"
+}
 
 # ---------- Systemy zewnętrzne ----------
 soz.identity -> nationalNode "Potwierdza tożsamość pacjenta"

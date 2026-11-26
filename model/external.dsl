@@ -1,4 +1,4 @@
-# Systemy zewnętrzne. HIS, LIS i PACS pozostają poza SOZ – SOZ integruje się z nimi (FR-INT-01..03).
+# Systemy zewnętrzne. HIS, LIS i PACS pozostają poza SOZ - SOZ integruje się z nimi (FR-INT-01..03).
 
 his = softwareSystem "Systemy szpitalne" "HIS i PACS szpitali: ruch chorych, dokumentacja, obrazy." {
     tags "Zewnętrzny"

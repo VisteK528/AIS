@@ -1,4 +1,4 @@
-# System Opieki Zdrowotnej (SOZ) – kontenery logiczne w 5 warstwach (punkt 2 projektu) i komponenty usługi Wizyty.
+# System Opieki Zdrowotnej (SOZ) - kontenery logiczne w 5 warstwach (punkt 2 projektu) i komponenty usługi Wizyty.
 # Bez technologii (wybór technologii to punkt 3). Wymagania i klasa usług (K1/K2/K3, NFR "Klasy usług") w properties.
 
 soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekarzy i laboratoria sieci 5 szpitali i 20 przychodni." {
@@ -18,7 +18,7 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
                 "Wymagania" "FR-WIZ-01, FR-TEL-09, NFR-UZY-02"
             }
         }
-        doctorPanel = container "Panel lekarza" "Dokumentacja, zlecenia, wyniki, obrazy i teleporady." {
+        doctorPanel = container "Panel lekarza" "Panel personelu medycznego: dokumentacja, zlecenia, wyniki, obrazy i teleporady." {
             tags "Przeglądarka"
             properties {
                 "Klasa usług" "K1"
@@ -35,10 +35,10 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
     }
 
     group "Warstwa aplikacji" {
-        appointments = container "Wizyty" "Grafiki lekarzy, wolne terminy, rezerwacje, odwołania i przypomnienia." {
+        appointments = container "Wizyty" "Grafiki lekarzy, zasoby placówek, wolne terminy, rezerwacje, odwołania i przypomnienia." {
             properties {
                 "Klasa usług" "K2"
-                "Wymagania" "FR-WIZ-01..09, FR-TEL-01..05/07, NFR-WYD-01"
+                "Wymagania" "FR-WIZ-01..10, FR-TEL-01..05/07, NFR-WYD-01"
             }
 
             requestHandler = component "Obsługa żądań" "Przyjmuje żądania pacjentów i rejestracji, sprawdza uprawnienia." {
@@ -46,9 +46,9 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
                     "Wymagania" "FR-WIZ-01/05/06/07, NFR-BEZ-03, NFR-IOP-06"
                 }
             }
-            schedules = component "Grafiki lekarzy" "Godziny pracy i podział na terminy wizyt i teleporad." {
+            schedules = component "Grafiki lekarzy" "Godziny pracy, przypisane gabinety i sprzęt, podział na terminy wizyt i teleporad." {
                 properties {
-                    "Wymagania" "FR-WIZ-08, FR-TEL-07, NFR-SKA-04"
+                    "Wymagania" "FR-WIZ-08/10, FR-TEL-07, NFR-SKA-04"
                 }
             }
             slotSearch = component "Wyszukiwanie terminów" "Szybki podgląd aktualnych wolnych terminów." {
@@ -91,7 +91,7 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
         records = container "Dokumentacja medyczna" "Jedna kartoteka pacjenta, wpisy z historią zmian i podpisem." {
             properties {
                 "Klasa usług" "K1"
-                "Wymagania" "FR-DOK-01..06, FR-INT-01, NFR-WYD-02, NFR-ZGO-02/03"
+                "Wymagania" "FR-DOK-01..07, FR-INT-01, NFR-WYD-02, NFR-ZGO-02/03"
             }
         }
         orders = container "Zlecenia i wyniki" "Zlecenia badań, statusy, wyniki z korektami, wyniki krytyczne." {
@@ -106,10 +106,10 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
                 "Wymagania" "FR-ROZ-01..06"
             }
         }
-        notifications = container "Powiadomienia" "Przypomnienia, informacje o wynikach, pilne alerty dla lekarzy." {
+        notifications = container "Powiadomienia" "Przypomnienia, nowe zalecenia i wpisy, informacje o wynikach, pilne alerty dla lekarzy." {
             properties {
                 "Klasa usług" "K2"
-                "Wymagania" "FR-WIZ-02, FR-TEL-02, FR-ZLE-05/06, NFR-WYD-03"
+                "Wymagania" "FR-WIZ-02, FR-TEL-02, FR-DOK-07, FR-ZLE-05/06, NFR-WYD-03"
             }
         }
     }
@@ -150,6 +150,12 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
                 "Wymagania" "FR-ANA-01..06, NFR-WYD-06, NFR-ZGO-06"
             }
         }
+        auditLog = container "Dziennik audytu" "Niemodyfikowalny magazyn tylko do dopisywania: kto, kiedy i do jakich danych miał dostęp." {
+            tags "Baza"
+            properties {
+                "Wymagania" "FR-IAM-06, NFR-BEZ-04/08, NFR-ZGO-05"
+            }
+        }
     }
 
     group "Warstwa infrastruktury" {
@@ -158,9 +164,14 @@ soz = softwareSystem "System Opieki Zdrowotnej (SOZ)" "Łączy pacjentów, lekar
                 "Wymagania" "NFR-BEZ-03/05, NFR-IOP-06, NFR-SKA-02"
             }
         }
-        identity = container "Tożsamość i dostęp" "Logowanie, MFA, role, zgody, upoważnienia i dziennik audytu." {
+        identity = container "Tożsamość i dostęp" "Logowanie, MFA, role, zgody i upoważnienia; rejestruje dostęp do danych pacjentów." {
             properties {
-                "Wymagania" "FR-IAM-01..06, NFR-BEZ-01..04/08/09"
+                "Wymagania" "FR-IAM-01..06, NFR-BEZ-01..04/09"
+            }
+        }
+        monitoring = container "Monitorowanie i logi" "Metryki, rozproszone śledzenie, alerty i centralne logi bez danych pacjentów." {
+            properties {
+                "Wymagania" "NFR-MON-01..04, NFR-BEZ-09"
             }
         }
     }

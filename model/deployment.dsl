@@ -1,10 +1,15 @@
-# Wdrożenie – chmura w EOG (region podstawowy + zapasowy) oraz placówki. Bez technologii (punkt 3).
+# Wdrożenie - chmura w EOG (region podstawowy + zapasowy) oraz placówki. Bez technologii (punkt 3).
 
 prod = deploymentEnvironment "Produkcja" {
     primaryGroup = deploymentGroup "Region podstawowy"
 
     primary = deploymentNode "Region podstawowy (EOG)" "Chmura publiczna na terenie EOG (NFR-NIE-01, NFR-ZGO-04)." {
         lb = infrastructureNode "Równoważenie obciążenia" "Rozdziela ruch między strefy, filtruje ataki."
+        web = deploymentNode "Hosting aplikacji webowych" "Pliki portalu i paneli udostępniane przez sieć CDN; aplikacje działają w przeglądarce." {
+            containerInstance soz.patientPortal primaryGroup
+            containerInstance soz.doctorPanel primaryGroup
+            containerInstance soz.adminPanel primaryGroup
+        }
         vpnHub = infrastructureNode "Brama VPN" "Szyfrowane połączenia z placówkami."
 
         az = deploymentNode "Strefy dostępności A, B, C" "Każda strefa ma pełny zestaw usług; awaria strefy nie przerywa pracy." "" "" 3 {
@@ -33,10 +38,15 @@ prod = deploymentEnvironment "Produkcja" {
         dwNode = deploymentNode "Magazyn analityczny" "Oddzielony od baz operacyjnych (NFR-WYD-06)." {
             containerInstance soz.warehouse primaryGroup
         }
-        monitoring = infrastructureNode "Monitorowanie i logi" "Metryki, alerty, scentralizowane logi bez danych pacjentów (NFR-MON-01..04)."
+        auditNode = deploymentNode "Magazyn audytu" "Tylko dopisywanie, blokada modyfikacji WORM (NFR-BEZ-08)." {
+            auditInst = containerInstance soz.auditLog primaryGroup
+        }
+        monitoring = deploymentNode "Monitorowanie i logi" "Usługa zarządzana: metryki, alerty, logi bez danych pacjentów (NFR-MON-01..04)." {
+            monInst = containerInstance soz.monitoring primaryGroup
+        }
     }
 
-    dr = deploymentNode "Region zapasowy (EOG)" "Przejmuje pracę po awarii regionu: RPO ≤ 5 min, RTO 1–4 h (NFR-NIE-02/03)." {
+    dr = deploymentNode "Region zapasowy (EOG)" "Przejmuje pracę po awarii regionu: RPO ≤ 5 min, RTO 1-4 h (NFR-NIE-02/03)." {
         standby = infrastructureNode "Klaster w gotowości" "Usługi uruchamiane przy przełączeniu regionu."
         drDb = infrastructureNode "Replika bazy relacyjnej" "Gotowa do przejęcia roli bazy głównej."
         drBlob = infrastructureNode "Replika magazynu obiektów" "Kopia obrazów i dokumentów."
@@ -52,11 +62,25 @@ prod = deploymentEnvironment "Produkcja" {
         facilityVpn = infrastructureNode "Router VPN" "Szyfrowany tunel do chmury."
     }
 
-    # ---------- Relacje infrastrukturalne (tag "Infrastruktura" – jedyne relacje pokazywane w widokach wdrożenia) ----------
+    users = deploymentNode "Urządzenia użytkowników" "Komputery i telefony pacjentów oraz personelu." {
+        browser = infrastructureNode "Przeglądarka internetowa" "Uruchamia portal pacjenta i panele."
+        mobileInst = containerInstance soz.mobileApp primaryGroup
+    }
+
+    # ---------- Relacje infrastrukturalne (tag "Infrastruktura" - jedyne relacje pokazywane w widokach wdrożenia) ----------
     primary.lb -> primary.az.cluster.gwInst "Kieruje ruch" {
         tags "Infrastruktura"
     }
-    primary.az.cluster.gwInst -> primary.monitoring "Wysyła metryki i logi" {
+    users.browser -> primary.web "Pobiera aplikacje webowe" {
+        tags "Infrastruktura"
+    }
+    users.browser -> primary.lb "Wywołuje API" {
+        tags "Infrastruktura"
+    }
+    users.mobileInst -> primary.lb "Wywołuje API" {
+        tags "Infrastruktura"
+    }
+    primary.auditNode.auditInst -> dr.backups "Kopia zapasowa" {
         tags "Infrastruktura"
     }
     primary.dbNode.dbInst -> dr.drDb "Replikuje dane" {
