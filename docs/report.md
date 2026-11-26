@@ -43,6 +43,13 @@
     - [Lekarze i personel medyczny](#lekarze-i-personel-medyczny)
     - [Administracja szpitali i przychodni](#administracja-szpitali-i-przychodni)
     - [Organy regulacyjne i instytucje nadzorujące](#organy-regulacyjne-i-instytucje-nadzorujące)
+- [2. Projekt architektury systemu SOZ](#2-projekt-architektury-systemu-soz)
+  - [2.1. Warstwy i główne decyzje architektoniczne](#21-warstwy-i-główne-decyzje-architektoniczne)
+  - [2.2. Diagram kontekstu (C4 poziom 1)](#22-diagram-kontekstu-c4-poziom-1)
+  - [2.3. Diagram kontenerów (C4 poziom 2)](#23-diagram-kontenerów-c4-poziom-2)
+    - [Obsługa pacjenta](#obsługa-pacjenta)
+    - [Obsługa kliniczna](#obsługa-kliniczna)
+  - [2.4. Diagram komponentów (C4 poziom 3)](#24-diagram-komponentów-c4-poziom-3)
 
 
 ## 1. Analiza wymagań systemu SOZ
@@ -559,3 +566,103 @@ Poniższa macierz pokazuje, że każdy zidentyfikowany problem interesariusza je
 | Brak pełnej identyfikowalności operacji | FR-IAM-06, NFR-BEZ-08                                     |
 | Bezpieczeństwo wymiany danych           | NFR-BEZ-05, NFR-IOP-01, NFR-NIE-06                        |
 | Zarządzanie incydentami bezpieczeństwa  | NFR-BEZ-09, NFR-ZGO-05, NFR-MON-04                        |
+
+---
+
+## 2. Projekt architektury systemu SOZ
+
+Architekturę opisano modelem C4.
+
+---
+
+### 2.1. Warstwy i główne decyzje architektoniczne
+
+#### Warstwy główne
+
+| Warstwa        | Główne zadania                                                                      |
+| -------------- | ----------------------------------------------------------------------------------- |
+| Prezentacji    | Interfejsy użytkowników. Cała logika biznesowa i autoryzacja są po stronie serwera. |
+| Aplikacji      | Mikrousługi odpowiadające obszarom wymagań funkcjonalnych.                          |
+| Integracji     | Wymiana danych z NFZ i placówkami spoza sieci. Asynchroniczna komunikacja usług.    |
+| Danych         | Przechowywanie danych, obrazów i skanów, danych analitycznych                       |
+| Infrastruktury | Jedno wejście do usług, zarządzanie tożsamością, monitorowanie i rejestrowanie.     |
+
+#### Główne decyzje architektoniczne:
+
+1. Mikrousługi według obszarów funkcjonalnych. Każda usługa jest skalowana i wdrażana niezależnie, a awaria jednej z nich nie wyłącza pozostałych (NFR-SKA-02, NFR-DOS-04).
+2. Brama API jako jedyne wejście do usług. Brama odpowiada za routing, limity żądań i ochronę przed atakami. Uprawnienia są dodatkowo sprawdzane w usługach przy każdym żądaniu (NFR-BEZ-03).
+3. Komunikacja zdarzeniowa przez kolejkę. Zmiany wizyt, dokumentacji, wyników i płatności są publikowane jako zdarzenia. Kolejka gwarantuje, że komunikaty nie zostaną utracone ani przetworzone wielokrotnie (NFR-NIE-06), a przy niedostępności systemu zewnętrznego buforuje je i ponawia (NFR-IOP-05).
+4. Jedna baza relacyjna z osobnym schematem dla każdej usługi. Szacunek z 1.4 pokazał, że ruch (ok. 750 RPS) mieści się w jednym klastrze z replikami odczytu. Osobne schematy zachowują niezależność usług bez kosztu utrzymania wielu baz.
+5. Osobne magazyny dla danych o innej charakterystyce. Obrazy to ponad 95% danych, więc trafiają do magazynu obiektów z warstwami gorącą i zimną. Dziennik audytu ma większy wolumen niż cała dokumentacja i musi być niemodyfikowalny, więc jest osobnym magazynem tylko do dopisywania (NFR-BEZ-08). Hurtownia analityczna jest oddzielona od baz operacyjnych (NFR-WYD-06, NFR-ZGO-06).
+6. Jeden punkt integracji. Usługa Integracja HL7 / FHIR tłumaczy formaty i oddziela usługi od systemów zewnętrznych, więc zmiana po stronie partnera dotyczy tylko jednej usługi.
+
+---
+
+### 2.2. Diagram kontekstu (C4 poziom 1)
+
+![Diagram kontekstu SOZ](objects/01-kontekst.svg)
+
+Z systemu korzystają trzy grupy użytkowników: pacjenci (także opiekunowie i pełnomocnicy), personel medyczny (lekarze, pielęgniarki) oraz administracja placówek (rejestracja, zarząd, analitycy).
+
+| System zewnętrzny       | Rola wobec SOZ                                                                  | Wymagania            |
+| ----------------------- | ------------------------------------------------------------------------------- | -------------------- |
+| Systemy szpitalne       | HIS i PACS szpitali: przesyłają informacje o pobytach, dokumentację i obrazy    | FR-INT-01, FR-INT-03 |
+| Laboratoria             | Systemy LIS: przyjmują zlecenia i odsyłają wyniki                               | FR-INT-02, FR-ZLE-03 |
+| Platforma P1            | Przyjmuje zdarzenia medyczne, e-recepty i e-skierowania                         | FR-INT-04            |
+| NFZ                     | Weryfikuje uprawnienia pacjentów (eWUŚ) i przyjmuje dane sprawozdawcze          | FR-INT-05, FR-ROZ-05 |
+| Węzeł Krajowy           | Potwierdza tożsamość pacjentów przy zakładaniu konta i logowaniu                | FR-IAM-01            |
+| Bramka płatności        | Obsługuje płatności online i zwroty                                             | FR-ROZ-02, FR-ROZ-03 |
+| Dostawcy SMS / e-mail   | Doręczają powiadomienia i przypomnienia                                         | FR-WIZ-02, FR-ZLE-05 |
+| Placówki spoza sieci    | Wymieniają dokumentację i skierowania w standardzie HL7 FHIR                    | FR-INT-06            |
+
+---
+
+### 2.3. Diagram kontenerów (C4 poziom 2)
+
+Ze względu na liczbę kontenerów poziom 2 przedstawiono w trzech widokach:
+
+- przegląd wszystkich kontenerów w pięciu warstwach, bez relacji szczegółowych i systemów zewnętrznych,
+- obsługa pacjenta: wizyty, teleporady, płatności i powiadomienia,
+- obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami.
+
+Widoki obsługi pacjenta i obsługi klinicznej pokazują przepływy między usługami i systemami zewnętrznymi, dlatego pomijają **warstwę danych**. Zapis do bazy relacyjnej, magazynu obrazów i dokumentów oraz dziennika audytu przedstawia tylko widok przeglądowy, żeby te same relacje nie powtarzały się na każdym diagramie.
+
+![Diagram kontenerów SOZ - przegląd](objects/02-kontenery-przeglad.svg)
+
+| Kontener                      | Odpowiedzialność                                                                     | Klasa usług       |
+| ----------------------------- | ------------------------------------------------------------------------------------ | ----------------- |
+| Portal pacjenta               | Wizyty, teleporady, dokumentacja, wyniki i płatności w przeglądarce                  | K2                |
+| Aplikacja mobilna             | Funkcje portalu pacjenta na telefonie                                                | K2                |
+| Panel lekarza                 | Dokumentacja, zlecenia, wyniki, obrazy i teleporady dla personelu medycznego         | K1                |
+| Panel administracji           | Rejestracja, grafiki, cenniki, konta i panele analityczne                            | K3                |
+| Wizyty                        | Grafiki, zasoby placówek, wolne terminy, rezerwacje, odwołania i przypomnienia       | K2                |
+| Telekonsultacje               | Bezpieczne połączenia wideo i czat, przesyłanie dokumentów                           | K2                |
+| Dokumentacja medyczna         | Jedna kartoteka pacjenta, wpisy z historią zmian i podpisem                          | K1                |
+| Zlecenia i wyniki             | Zlecenia badań, statusy, wyniki z korektami, wyniki krytyczne                        | K1                |
+| Rozliczenia                   | Cenniki, płatności, zwroty, paragony i świadczenia NFZ                               | K2 / K3           |
+| Powiadomienia                 | Przypomnienia, nowe zalecenia, informacje o wynikach, pilne alerty dla lekarzy       | K2                |
+| Integracja HL7 / FHIR         | Wymiana danych z systemami zewnętrznymi                                              | K1                |
+| Kolejka zdarzeń               | Asynchroniczna komunikacja usług bez utraty i duplikatów komunikatów                 | K1                |
+| Baza relacyjna                | Dane ustrukturyzowane, osobny schemat dla każdej usługi                              | wspólna           |
+| Magazyn obrazów i dokumentów  | Obrazy diagnostyczne (DICOM), skany i dokumenty PDF                                  | wspólna           |
+| Hurtownia analityczna         | Pseudonimizowane dane do paneli i raportów                                           | K3                |
+| Dziennik audytu               | Niemodyfikowalny zapis dostępu do danych pacjentów                                   | wspólna           |
+| Brama API                     | Jedno wejście do usług: routing, ochrona, limity                                     | wspólna           |
+| Tożsamość i dostęp            | Logowanie, MFA, role, zgody i upoważnienia                                           | wspólna           |
+| Monitorowanie i logi          | Metryki, rozproszone śledzenie, alerty i logi bez danych pacjentów                   | wspólna           |
+
+Na diagramie przeglądowym monitorowanie ma jedną relację z bramą API, która reprezentuje telemetrię wysyłaną przez wszystkie usługi.
+
+#### Obsługa pacjenta
+
+![Diagram kontenerów SOZ - obsługa pacjenta](objects/02a-kontenery-pacjent.svg)
+
+Pacjent loguje się przez usługę Tożsamość i dostęp, która potwierdza jego tożsamość w Węźle Krajowym. Żądania z portalu i aplikacji trafiają przez bramę API do usługi Wizyty. Przy rezerwacji usługa sprawdza uprawnienia NFZ przez usługę integracji i zleca płatność w usłudze Rozliczenia, która korzysta z bramki płatności. Zmiany wizyt są publikowane w kolejce zdarzeń, skąd odbiera je usługa Powiadomienia i wysyła SMS lub e-mail. Połączenie wideo lub czat teleporady jest zestawiane bezpośrednio między aplikacją a usługą Telekonsultacje, bez przechodzenia strumienia przez bramę API.
+
+#### Obsługa kliniczna
+
+![Diagram kontenerów SOZ - obsługa kliniczna](objects/02b-kontenery-klinika.svg)
+
+Personel medyczny pracuje w panelu lekarza, który przez bramę API korzysta z usług Dokumentacja medyczna oraz Zlecenia i wyniki. Zlecenia są publikowane w kolejce i przekazywane przez usługę integracji do laboratoriów. Wyniki wracają tą samą drogą do dokumentacji pacjenta i do usługi Powiadomienia, która w przypadku wyniku krytycznego wysyła pilny alert do panelu lekarza (NFR-WYD-03). Systemy HIS przesyłają informacje o pobytach, dokumentację i obrazy. Obrazy są archiwizowane w magazynie obiektów, z którego panel lekarza wyświetla je bezpośrednio (NFR-WYD-05). Te relacje widać na diagramie przeglądowym. Zdarzenia medyczne są raportowane do platformy P1.
+
+---
