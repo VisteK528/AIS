@@ -3,107 +3,134 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2026-11-26T21:02:40Z",
+  "lastModifiedAgent" : "structurizr/diagrams/58b4c086-ca18-4272-958d-a280a35ed489",
+  "lastModifiedDate" : "2026-11-26T21:32:03Z",
+  "lastModifiedUser" : "496056570",
   "model" : {
     "customElements" : [ {
-      "description" : "kto, kiedy, jakie dane",
+      "description" : "PESEL, dane osobowe, kontakt",
       "group" : "Model danych",
-      "id" : "54",
+      "id" : "40",
       "metadata" : "Encja",
-      "name" : "Wpis audytu",
+      "name" : "Pacjent",
       "properties" : {
-        "structurizr.dsl.identifier" : "eAudit"
+        "structurizr.dsl.identifier" : "ePatient"
       },
       "relationships" : [ {
-        "description" : "dotyczy (N:1)",
-        "destinationId" : "40",
-        "id" : "71",
-        "sourceId" : "54",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Encja"
-    }, {
-      "description" : "kwota, status, zwrot",
-      "group" : "Model danych",
-      "id" : "53",
-      "metadata" : "Encja",
-      "name" : "Płatność",
-      "properties" : {
-        "structurizr.dsl.identifier" : "ePayment"
-      },
-      "tags" : "Element,Encja"
-    }, {
-      "description" : "rodzaj, zakres, ważność",
-      "group" : "Model danych",
-      "id" : "52",
-      "metadata" : "Encja",
-      "name" : "Zgoda / Upoważnienie",
-      "properties" : {
-        "structurizr.dsl.identifier" : "eConsent"
-      },
-      "tags" : "Element,Encja"
-    }, {
-      "description" : "modalność, obrazy, opis",
-      "group" : "Model danych",
-      "id" : "51",
-      "metadata" : "Encja",
-      "name" : "Badanie obrazowe",
-      "properties" : {
-        "structurizr.dsl.identifier" : "eImaging"
-      },
-      "tags" : "Element,Encja"
-    }, {
-      "description" : "wartość, flaga krytyczna, wersja",
-      "group" : "Model danych",
-      "id" : "50",
-      "metadata" : "Encja",
-      "name" : "Wynik badania",
-      "properties" : {
-        "structurizr.dsl.identifier" : "eResult"
-      },
-      "tags" : "Element,Encja"
-    }, {
-      "description" : "rodzaj badania, status",
-      "group" : "Model danych",
-      "id" : "49",
-      "metadata" : "Encja",
-      "name" : "Zlecenie",
-      "properties" : {
-        "structurizr.dsl.identifier" : "eOrder"
-      },
-      "relationships" : [ {
-        "description" : "ma wyniki (1:N)",
-        "destinationId" : "50",
-        "id" : "69",
-        "sourceId" : "49",
+        "description" : "umawia (1:N)",
+        "destinationId" : "46",
+        "id" : "55",
+        "sourceId" : "40",
         "tags" : "Relationship"
       }, {
-        "description" : "realizowane jako (1:0..1)",
-        "destinationId" : "51",
-        "id" : "70",
-        "sourceId" : "49",
+        "description" : "udziela (1:N)",
+        "destinationId" : "52",
+        "id" : "56",
+        "sourceId" : "40",
+        "tags" : "Relationship"
+      }, {
+        "description" : "posiada (1:N)",
+        "destinationId" : "48",
+        "id" : "57",
+        "sourceId" : "40",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Encja"
     }, {
-      "description" : "treść, rozpoznania, wersja, podpis",
+      "description" : "nazwa, typ, adres, cennik",
       "group" : "Model danych",
-      "id" : "48",
+      "id" : "41",
       "metadata" : "Encja",
-      "name" : "Dokument medyczny",
+      "name" : "Placówka",
       "properties" : {
-        "structurizr.dsl.identifier" : "eDoc"
+        "structurizr.dsl.identifier" : "eFacility"
+      },
+      "relationships" : [ {
+        "description" : "prowadzi (1:N)",
+        "destinationId" : "43",
+        "id" : "58",
+        "sourceId" : "41",
+        "tags" : "Relationship"
+      }, {
+        "description" : "posiada (1:N)",
+        "destinationId" : "44",
+        "id" : "60",
+        "sourceId" : "41",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "nr PWZ, specjalizacja, role (lekarz, pielęgniarka, ...)",
+      "group" : "Model danych",
+      "id" : "42",
+      "metadata" : "Encja",
+      "name" : "Pracownik",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eStaff"
+      },
+      "relationships" : [ {
+        "description" : "pracuje wg (1:N)",
+        "destinationId" : "43",
+        "id" : "59",
+        "sourceId" : "42",
+        "tags" : "Relationship"
+      }, {
+        "description" : "podpisuje (1:N)",
+        "destinationId" : "48",
+        "id" : "68",
+        "sourceId" : "42",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "godziny pracy, tryb wizyt",
+      "group" : "Model danych",
+      "id" : "43",
+      "metadata" : "Encja",
+      "name" : "Grafik",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eSchedule"
+      },
+      "relationships" : [ {
+        "description" : "wykorzystuje (N:M)",
+        "destinationId" : "44",
+        "id" : "61",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      }, {
+        "description" : "dzieli się na (1:N)",
+        "destinationId" : "45",
+        "id" : "62",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "gabinet / sprzęt, typ, dostępność",
+      "group" : "Model danych",
+      "id" : "44",
+      "metadata" : "Encja",
+      "name" : "Zasób",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eResource"
       },
       "tags" : "Element,Encja"
     }, {
-      "description" : "tryb (wideo / czat), status",
+      "description" : "początek, koniec, status",
       "group" : "Model danych",
-      "id" : "47",
+      "id" : "45",
       "metadata" : "Encja",
-      "name" : "Telekonsultacja",
+      "name" : "Termin",
       "properties" : {
-        "structurizr.dsl.identifier" : "eTele"
+        "structurizr.dsl.identifier" : "eSlot"
       },
+      "relationships" : [ {
+        "description" : "rezerwowany przez (1:0..1)",
+        "destinationId" : "46",
+        "id" : "63",
+        "sourceId" : "45",
+        "tags" : "Relationship"
+      } ],
       "tags" : "Element,Encja"
     }, {
       "description" : "typ, status, finansowanie (NFZ / prywatne)",
@@ -141,127 +168,102 @@
       } ],
       "tags" : "Element,Encja"
     }, {
-      "description" : "początek, koniec, status",
+      "description" : "tryb (wideo / czat), status",
       "group" : "Model danych",
-      "id" : "45",
+      "id" : "47",
       "metadata" : "Encja",
-      "name" : "Termin",
+      "name" : "Telekonsultacja",
       "properties" : {
-        "structurizr.dsl.identifier" : "eSlot"
+        "structurizr.dsl.identifier" : "eTele"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "treść, rozpoznania, wersja, podpis",
+      "group" : "Model danych",
+      "id" : "48",
+      "metadata" : "Encja",
+      "name" : "Dokument medyczny",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eDoc"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "rodzaj badania, status",
+      "group" : "Model danych",
+      "id" : "49",
+      "metadata" : "Encja",
+      "name" : "Zlecenie",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eOrder"
       },
       "relationships" : [ {
-        "description" : "rezerwowany przez (1:0..1)",
-        "destinationId" : "46",
-        "id" : "63",
-        "sourceId" : "45",
+        "description" : "ma wyniki (1:N)",
+        "destinationId" : "50",
+        "id" : "69",
+        "sourceId" : "49",
+        "tags" : "Relationship"
+      }, {
+        "description" : "realizowane jako (1:0..1)",
+        "destinationId" : "51",
+        "id" : "70",
+        "sourceId" : "49",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Encja"
     }, {
-      "description" : "gabinet / sprzęt, typ, dostępność",
+      "description" : "wartość, flaga krytyczna, wersja",
       "group" : "Model danych",
-      "id" : "44",
+      "id" : "50",
       "metadata" : "Encja",
-      "name" : "Zasób",
+      "name" : "Wynik badania",
       "properties" : {
-        "structurizr.dsl.identifier" : "eResource"
+        "structurizr.dsl.identifier" : "eResult"
       },
       "tags" : "Element,Encja"
     }, {
-      "description" : "godziny pracy, tryb wizyt",
+      "description" : "modalność, obrazy, opis",
       "group" : "Model danych",
-      "id" : "43",
+      "id" : "51",
       "metadata" : "Encja",
-      "name" : "Grafik",
+      "name" : "Badanie obrazowe",
       "properties" : {
-        "structurizr.dsl.identifier" : "eSchedule"
+        "structurizr.dsl.identifier" : "eImaging"
       },
-      "relationships" : [ {
-        "description" : "wykorzystuje (N:M)",
-        "destinationId" : "44",
-        "id" : "61",
-        "sourceId" : "43",
-        "tags" : "Relationship"
-      }, {
-        "description" : "dzieli się na (1:N)",
-        "destinationId" : "45",
-        "id" : "62",
-        "sourceId" : "43",
-        "tags" : "Relationship"
-      } ],
       "tags" : "Element,Encja"
     }, {
-      "description" : "nr PWZ, specjalizacja, role (lekarz, pielęgniarka, ...)",
+      "description" : "rodzaj, zakres, ważność",
       "group" : "Model danych",
-      "id" : "42",
+      "id" : "52",
       "metadata" : "Encja",
-      "name" : "Pracownik",
+      "name" : "Zgoda / Upoważnienie",
       "properties" : {
-        "structurizr.dsl.identifier" : "eStaff"
+        "structurizr.dsl.identifier" : "eConsent"
       },
-      "relationships" : [ {
-        "description" : "pracuje wg (1:N)",
-        "destinationId" : "43",
-        "id" : "59",
-        "sourceId" : "42",
-        "tags" : "Relationship"
-      }, {
-        "description" : "podpisuje (1:N)",
-        "destinationId" : "48",
-        "id" : "68",
-        "sourceId" : "42",
-        "tags" : "Relationship"
-      } ],
       "tags" : "Element,Encja"
     }, {
-      "description" : "nazwa, typ, adres, cennik",
+      "description" : "kwota, status, zwrot",
       "group" : "Model danych",
-      "id" : "41",
+      "id" : "53",
       "metadata" : "Encja",
-      "name" : "Placówka",
+      "name" : "Płatność",
       "properties" : {
-        "structurizr.dsl.identifier" : "eFacility"
+        "structurizr.dsl.identifier" : "ePayment"
       },
-      "relationships" : [ {
-        "description" : "prowadzi (1:N)",
-        "destinationId" : "43",
-        "id" : "58",
-        "sourceId" : "41",
-        "tags" : "Relationship"
-      }, {
-        "description" : "posiada (1:N)",
-        "destinationId" : "44",
-        "id" : "60",
-        "sourceId" : "41",
-        "tags" : "Relationship"
-      } ],
       "tags" : "Element,Encja"
     }, {
-      "description" : "PESEL, dane osobowe, kontakt",
+      "description" : "kto, kiedy, jakie dane",
       "group" : "Model danych",
-      "id" : "40",
+      "id" : "54",
       "metadata" : "Encja",
-      "name" : "Pacjent",
+      "name" : "Wpis audytu",
       "properties" : {
-        "structurizr.dsl.identifier" : "ePatient"
+        "structurizr.dsl.identifier" : "eAudit"
       },
       "relationships" : [ {
-        "description" : "umawia (1:N)",
-        "destinationId" : "46",
-        "id" : "55",
-        "sourceId" : "40",
-        "tags" : "Relationship"
-      }, {
-        "description" : "udziela (1:N)",
-        "destinationId" : "52",
-        "id" : "56",
-        "sourceId" : "40",
-        "tags" : "Relationship"
-      }, {
-        "description" : "posiada (1:N)",
-        "destinationId" : "48",
-        "id" : "57",
-        "sourceId" : "40",
+        "description" : "dotyczy (N:1)",
+        "destinationId" : "40",
+        "id" : "71",
+        "sourceId" : "54",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Encja"
@@ -275,7 +277,7 @@
           "id" : "157",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.3742be3e-558b-4e55-8e64-e267599da018"
+            "structurizr.dsl.identifier" : "prod.primary.web.10df492d-1f9d-413c-a3fc-a99653e6a081"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -298,7 +300,7 @@
           "id" : "158",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.3fe81e20-da49-4610-b549-7b2cef5ee1e7"
+            "structurizr.dsl.identifier" : "prod.primary.web.3e8d7c2d-caf4-4fee-be0a-4f0a462a2f78"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -327,7 +329,7 @@
           "id" : "159",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.3533d780-5768-47a1-9c9f-5818d56b332f"
+            "structurizr.dsl.identifier" : "prod.primary.web.2466607c-c142-4fb6-8d5f-e76f9d0f15fd"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -404,7 +406,7 @@
               "id" : "178",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.4c2398be-e686-40e7-841f-0112d1583533"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.04960405-6687-4de2-95ee-6f505867a46d"
               },
               "relationships" : [ {
                 "description" : "Zapisuje dane",
@@ -421,7 +423,7 @@
               "id" : "182",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.8bbf38c5-7d13-409d-826e-f175f88d133f"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.533bc3c4-ac84-402a-a687-5dcd074e97f5"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -450,7 +452,7 @@
               "id" : "186",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.dbaf0b96-3504-4666-9ee6-dd12766a1ea5"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.112a0375-c01d-470d-a2cd-ddcd18f00588"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -479,7 +481,7 @@
               "id" : "189",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.fbed4a1a-5fcc-4824-8916-7e37a429314f"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.1114dbdc-2851-4700-92b4-a3abc933432d"
               },
               "relationships" : [ {
                 "description" : "Przekazuje sprawozdania NFZ",
@@ -508,7 +510,7 @@
               "id" : "194",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.af55ecc9-d593-47b7-bd81-414811072569"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.b2efe634-e7b6-44ab-8833-05e870e3fa54"
               },
               "relationships" : [ {
                 "description" : "Wysyła pilne alerty",
@@ -694,7 +696,7 @@
         "properties" : {
           "structurizr.dsl.identifier" : "prod.primary.az"
         },
-        "tags" : "Element,Deployment Node,"
+        "tags" : "Element,Deployment Node"
       }, {
         "containerInstances" : [ {
           "containerId" : "33",
@@ -765,7 +767,7 @@
           "id" : "213",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.dwNode.8f184863-b6ee-4fb6-adef-c5e67e0e7a7e"
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.157bd098-372a-4193-8d93-6214d5285776"
           },
           "tags" : "Container Instance"
         } ],
@@ -939,7 +941,7 @@
           "id" : "229",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.5ed63667-805a-455c-828e-862cf2837aed"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.9ef10482-3c17-43a2-a4b9-c67712b013cc"
           },
           "relationships" : [ {
             "description" : "Przesyła pobyty, dokumenty i obrazy",
@@ -956,7 +958,7 @@
           "id" : "231",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.7bb71006-7abb-4264-889b-426d946ded5c"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.741b12b3-80c1-4827-8c68-cd74be527fa8"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -997,7 +999,7 @@
       "properties" : {
         "structurizr.dsl.identifier" : "prod.facility"
       },
-      "tags" : "Element,Deployment Node,"
+      "tags" : "Element,Deployment Node"
     }, {
       "containerInstances" : [ {
         "containerId" : "14",
@@ -2006,78 +2008,75 @@
   },
   "name" : "System Opieki Zdrowotnej (SOZ)",
   "properties" : {
-    "structurizr.inspection.error" : "198",
     "structurizr.inspection.info" : "0",
     "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.error" : "198",
     "structurizr.inspection.warning" : "0"
   },
   "views" : {
     "componentViews" : [ {
-      "automaticLayout" : {
-        "edgeSeparation" : 50,
-        "nodeSeparation" : 90,
-        "rankDirection" : "TopBottom",
-        "rankSeparation" : 160,
-        "vertices" : true
-      },
       "containerId" : "17",
       "description" : "C4 poziom 3 - komponenty usługi Wizyty.",
+      "dimensions" : {
+        "height" : 4124,
+        "width" : 4450
+      },
       "elements" : [ {
         "id" : "18",
-        "x" : 0,
-        "y" : 0
+        "x" : 2259,
+        "y" : 904
       }, {
         "id" : "19",
-        "x" : 0,
-        "y" : 0
+        "x" : 714,
+        "y" : 1704
       }, {
         "id" : "20",
-        "x" : 0,
-        "y" : 0
+        "x" : 149,
+        "y" : 2864
       }, {
         "id" : "21",
-        "x" : 0,
-        "y" : 0
+        "x" : 1744,
+        "y" : 2084
       }, {
         "id" : "22",
-        "x" : 0,
-        "y" : 0
+        "x" : 2809,
+        "y" : 2079
       }, {
         "id" : "23",
-        "x" : 0,
-        "y" : 0
+        "x" : 3689,
+        "y" : 2079
       }, {
         "id" : "24",
-        "x" : 0,
-        "y" : 0
+        "x" : 920,
+        "y" : 2862
       }, {
         "id" : "25",
-        "x" : 0,
-        "y" : 0
+        "x" : 3689,
+        "y" : 1174
       }, {
         "id" : "29",
-        "x" : 0,
-        "y" : 0
+        "x" : 3624,
+        "y" : 3484
       }, {
         "id" : "31",
-        "x" : 0,
-        "y" : 0
+        "x" : 864,
+        "y" : 3484
       }, {
         "id" : "32",
-        "x" : 0,
-        "y" : 0
+        "x" : 3629,
+        "y" : 344
       }, {
         "id" : "33",
-        "x" : 0,
-        "y" : 0
+        "x" : 2209,
+        "y" : 3484
       }, {
         "id" : "37",
-        "x" : 0,
-        "y" : 0
+        "x" : 2209,
+        "y" : 89
       }, {
         "id" : "38",
-        "x" : 0,
-        "y" : 0
+        "x" : 894,
+        "y" : 324
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "03-komponenty-wizyty",
@@ -2086,45 +2085,96 @@
       "relationships" : [ {
         "id" : "134"
       }, {
-        "id" : "135"
+        "id" : "135",
+        "position" : 45
       }, {
-        "id" : "137"
+        "id" : "137",
+        "position" : 58,
+        "vertices" : [ {
+          "x" : 449,
+          "y" : 1499
+        } ]
       }, {
-        "id" : "138"
+        "id" : "138",
+        "position" : 45,
+        "vertices" : [ {
+          "x" : 2043,
+          "y" : 1294
+        } ]
       }, {
-        "id" : "139"
+        "id" : "139",
+        "position" : 48,
+        "vertices" : [ {
+          "x" : 3109,
+          "y" : 1214
+        } ]
       }, {
-        "id" : "140"
+        "id" : "140",
+        "position" : 85,
+        "vertices" : [ {
+          "x" : 1014,
+          "y" : 1529
+        } ]
       }, {
-        "id" : "141"
+        "id" : "141",
+        "position" : 39
       }, {
-        "id" : "142"
+        "id" : "142",
+        "position" : 75,
+        "vertices" : [ {
+          "x" : 1220,
+          "y" : 2574
+        } ]
       }, {
         "id" : "143"
       }, {
-        "id" : "144"
+        "id" : "144",
+        "position" : 77,
+        "vertices" : [ {
+          "x" : 3239,
+          "y" : 3324
+        }, {
+          "x" : 3784,
+          "y" : 3324
+        } ]
       }, {
-        "id" : "145"
+        "id" : "145",
+        "position" : 63,
+        "vertices" : [ {
+          "x" : 3519,
+          "y" : 3154
+        }, {
+          "x" : 3939,
+          "y" : 3154
+        } ]
       }, {
-        "id" : "146"
+        "id" : "146",
+        "position" : 13
       }, {
-        "id" : "147"
+        "id" : "147",
+        "position" : 18
       }, {
-        "id" : "148"
+        "id" : "148",
+        "position" : 20
       }, {
-        "id" : "149"
+        "id" : "149",
+        "position" : 34
       }, {
-        "id" : "150"
+        "id" : "150",
+        "position" : 30
       }, {
-        "id" : "151"
+        "id" : "151",
+        "position" : 19
       }, {
-        "id" : "152"
+        "id" : "152",
+        "position" : 29
       }, {
         "id" : "153"
       } ]
     } ],
     "configuration" : {
-      "lastSavedView" : "02b-kontenery-klinika",
+      "lastSavedView" : "03-komponenty-wizyty",
+      "metadataSymbols" : "SquareBrackets",
       "properties" : {
         "structurizr.metadata" : "false"
       },
@@ -2852,13 +2902,6 @@
       "softwareSystemId" : "12"
     } ],
     "customViews" : [ {
-      "automaticLayout" : {
-        "edgeSeparation" : 50,
-        "nodeSeparation" : 90,
-        "rankDirection" : "TopBottom",
-        "rankSeparation" : 160,
-        "vertices" : true
-      },
       "description" : "Diagram encji - główne dane systemu i relacje między nimi.",
       "elements" : [ {
         "id" : "40",
@@ -2962,14 +3005,11 @@
       "title" : "Model danych"
     } ],
     "deploymentViews" : [ {
-      "automaticLayout" : {
-        "edgeSeparation" : 50,
-        "nodeSeparation" : 90,
-        "rankDirection" : "TopBottom",
-        "rankSeparation" : 160,
-        "vertices" : true
-      },
       "description" : "Wdrożenie - urządzenia użytkowników, region podstawowy z trzema strefami dostępności i region zapasowy w EOG.",
+      "dimensions" : {
+        "height" : 2000,
+        "width" : 2000
+      },
       "elements" : [ {
         "id" : "154",
         "x" : 0,
@@ -3154,13 +3194,6 @@
       } ],
       "softwareSystemId" : "12"
     }, {
-      "automaticLayout" : {
-        "edgeSeparation" : 50,
-        "nodeSeparation" : 90,
-        "rankDirection" : "TopBottom",
-        "rankSeparation" : 160,
-        "vertices" : true
-      },
       "description" : "Wdrożenie - placówka i jej połączenie z chmurą.",
       "elements" : [ {
         "id" : "154",
