@@ -12,6 +12,11 @@ workspace "System Opieki Zdrowotnej (SOZ)" {
     }
 
     views {
+        # Bez daty w podpisie diagramów (tytuł i opis zostają).
+        properties {
+            "structurizr.metadata" "false"
+        }
+
         !include views/c4.dsl
         !include views/styles.dsl
     }
