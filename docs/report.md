@@ -666,3 +666,32 @@ Pacjent loguje się przez usługę Tożsamość i dostęp, która potwierdza jeg
 Personel medyczny pracuje w panelu lekarza, który przez bramę API korzysta z usług Dokumentacja medyczna oraz Zlecenia i wyniki. Zlecenia są publikowane w kolejce i przekazywane przez usługę integracji do laboratoriów. Wyniki wracają tą samą drogą do dokumentacji pacjenta i do usługi Powiadomienia, która w przypadku wyniku krytycznego wysyła pilny alert do panelu lekarza (NFR-WYD-03). Systemy HIS przesyłają informacje o pobytach, dokumentację i obrazy. Obrazy są archiwizowane w magazynie obiektów, z którego panel lekarza wyświetla je bezpośrednio (NFR-WYD-05). Te relacje widać na diagramie przeglądowym. Zdarzenia medyczne są raportowane do platformy P1.
 
 ---
+
+### 2.4. Diagram komponentów (C4 poziom 3)
+
+Do szczegółowego opisu wybrano usługę **Wizyty**:
+
+![Diagram komponentów usługi Wizyty](objects/03-komponenty-wizyty.svg)
+
+| Komponent                  | Odpowiedzialność                                                                | Wymagania                    |
+| -------------------------- | ------------------------------------------------------------------------------- | ---------------------------- |
+| Obsługa żądań              | Przyjmuje żądania pacjentów i rejestracji, sprawdza uprawnienia                 | FR-WIZ-01/05/06/07, NFR-BEZ-03 |
+| Grafiki lekarzy            | Godziny pracy, przypisane gabinety i sprzęt, podział na terminy                 | FR-WIZ-08/10, FR-TEL-07      |
+| Wyszukiwanie terminów      | Szybki podgląd aktualnych wolnych terminów                                      | FR-WIZ-03, NFR-WYD-01        |
+| Rezerwacja terminu         | Rezerwuje termin tak, by nie mógł go zająć nikt inny                            | FR-WIZ-04, FR-TEL-01         |
+| Odwołania i zwroty         | Odwołuje wizytę i zleca zwrot zgodnie z regulaminem placówki                    | FR-WIZ-05/07, FR-ROZ-03      |
+| Przypomnienia              | Planuje przypomnienia na 24 h (lub 1 h) przed wizytą                            | FR-WIZ-02, FR-TEL-02         |
+| Weryfikacja uprawnień NFZ  | Sprawdza ubezpieczenie pacjenta, nie blokując rezerwacji                        | FR-INT-05, NFR-IOP-05        |
+| Publikacja zdarzeń         | Niezawodnie publikuje zmiany wizyt dla innych usług i analityki                 | NFR-NIE-06, FR-WIZ-09        |
+
+**Przebieg rezerwacji wizyty:**
+
+1. Obsługa żądań przyjmuje żądanie z bramy API i sprawdza uprawnienia w usłudze Tożsamość i dostęp.
+2. Wyszukiwanie terminów pokazuje wolne terminy, aktualizowane przez komponent Grafiki lekarzy.
+3. Rezerwacja terminu zapisuje rezerwację w bazie w jednej transakcji, dzięki czemu termin nie może zostać zajęty dwukrotnie (FR-WIZ-04).
+4. Weryfikacja uprawnień NFZ odpytuje eWUŚ przez usługę integracji. Niedostępność NFZ nie blokuje rezerwacji, a weryfikacja jest ponawiana później (NFR-IOP-05).
+5. Dla wizyty prywatnej Rezerwacja terminu zleca płatność w usłudze Rozliczenia.
+6. Publikacja zdarzeń przekazuje informację o rezerwacji do kolejki. Zdarzenie zapisywane jest razem z rezerwacją, więc nie zostanie utracone nawet przy chwilowej awarii kolejki (NFR-NIE-06).
+7. Przypomnienia cyklicznie odczytują nadchodzące wizyty i publikują zdarzenia, na podstawie których usługa Powiadomienia wysyła przypomnienia (FR-WIZ-02).
+
+---
