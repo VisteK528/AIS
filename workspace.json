@@ -3,8 +3,8 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr/diagrams/58b4c086-ca18-4272-958d-a280a35ed489",
-  "lastModifiedDate" : "2026-11-26T21:32:03Z",
+  "lastModifiedAgent" : "structurizr/diagrams/d949b685-39c1-4cca-92ff-ae1e19291b44",
+  "lastModifiedDate" : "2026-11-26T22:16:42Z",
   "lastModifiedUser" : "496056570",
   "model" : {
     "customElements" : [ {
@@ -277,7 +277,7 @@
           "id" : "157",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.10df492d-1f9d-413c-a3fc-a99653e6a081"
+            "structurizr.dsl.identifier" : "prod.primary.web.48eb813c-5acc-4601-9dd8-82880f55be7d"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -300,7 +300,7 @@
           "id" : "158",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.3e8d7c2d-caf4-4fee-be0a-4f0a462a2f78"
+            "structurizr.dsl.identifier" : "prod.primary.web.afcf11f2-23c9-443d-9ee9-d476cbc11f8c"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -329,7 +329,7 @@
           "id" : "159",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.2466607c-c142-4fb6-8d5f-e76f9d0f15fd"
+            "structurizr.dsl.identifier" : "prod.primary.web.a0e2ceb5-eb59-43d5-8a48-4214e513cde9"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -406,7 +406,7 @@
               "id" : "178",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.04960405-6687-4de2-95ee-6f505867a46d"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.786af724-1c9b-4b2b-8cf5-db45911d13ab"
               },
               "relationships" : [ {
                 "description" : "Zapisuje dane",
@@ -423,7 +423,7 @@
               "id" : "182",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.533bc3c4-ac84-402a-a687-5dcd074e97f5"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.5b815b23-04c3-4dfd-91a6-cc6394fdd404"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -452,7 +452,7 @@
               "id" : "186",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.112a0375-c01d-470d-a2cd-ddcd18f00588"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.462b6aa1-aa04-4a90-baed-66b7ff150951"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -481,7 +481,7 @@
               "id" : "189",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.1114dbdc-2851-4700-92b4-a3abc933432d"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.726224c0-37ff-4e2f-a17a-981565c4821c"
               },
               "relationships" : [ {
                 "description" : "Przekazuje sprawozdania NFZ",
@@ -510,7 +510,7 @@
               "id" : "194",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.b2efe634-e7b6-44ab-8833-05e870e3fa54"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.7de44360-5aad-4f00-838b-f62b0e193114"
               },
               "relationships" : [ {
                 "description" : "Wysyła pilne alerty",
@@ -767,7 +767,7 @@
           "id" : "213",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.dwNode.157bd098-372a-4193-8d93-6214d5285776"
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.43037895-fdac-4afd-8d13-b5d09d9dc552"
           },
           "tags" : "Container Instance"
         } ],
@@ -941,7 +941,7 @@
           "id" : "229",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.9ef10482-3c17-43a2-a4b9-c67712b013cc"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.2b068f90-374a-487c-bfc2-a1e0893d4475"
           },
           "relationships" : [ {
             "description" : "Przesyła pobyty, dokumenty i obrazy",
@@ -958,7 +958,7 @@
           "id" : "231",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.741b12b3-80c1-4827-8c68-cd74be527fa8"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.1aea1608-af40-4067-8e79-e5e70921df37"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -2173,7 +2173,7 @@
       } ]
     } ],
     "configuration" : {
-      "lastSavedView" : "03-komponenty-wizyty",
+      "lastSavedView" : "04a-wdrozenie-chmura",
       "metadataSymbols" : "SquareBrackets",
       "properties" : {
         "structurizr.metadata" : "false"
@@ -3007,8 +3007,8 @@
     "deploymentViews" : [ {
       "description" : "Wdrożenie - urządzenia użytkowników, region podstawowy z trzema strefami dostępności i region zapasowy w EOG.",
       "dimensions" : {
-        "height" : 2000,
-        "width" : 2000
+        "height" : 5241,
+        "width" : 3885
       },
       "elements" : [ {
         "id" : "154",
@@ -3016,28 +3016,28 @@
         "y" : 0
       }, {
         "id" : "155",
-        "x" : 0,
-        "y" : 0
+        "x" : 1965,
+        "y" : 3557
       }, {
         "id" : "156",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "157",
-        "x" : 0,
-        "y" : 0
+        "x" : 2810,
+        "y" : 2402
       }, {
         "id" : "158",
-        "x" : 0,
-        "y" : 0
+        "x" : 2810,
+        "y" : 2907
       }, {
         "id" : "159",
-        "x" : 0,
-        "y" : 0
+        "x" : 2810,
+        "y" : 1897
       }, {
         "id" : "160",
-        "x" : 0,
-        "y" : 0
+        "x" : 1960,
+        "y" : 3057
       }, {
         "id" : "161",
         "x" : 0,
@@ -3048,161 +3048,224 @@
         "y" : 0
       }, {
         "id" : "163",
-        "x" : 0,
-        "y" : 0
+        "x" : 1874,
+        "y" : 1918
       }, {
         "id" : "167",
-        "x" : 0,
-        "y" : 0
+        "x" : 205,
+        "y" : 1422
       }, {
         "id" : "169",
-        "x" : 0,
-        "y" : 0
+        "x" : 1064,
+        "y" : 1913
       }, {
         "id" : "170",
-        "x" : 0,
-        "y" : 0
+        "x" : 1069,
+        "y" : 1383
       }, {
         "id" : "172",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "173",
-        "x" : 0,
-        "y" : 0
+        "x" : 252,
+        "y" : 237
       }, {
         "id" : "178",
-        "x" : 0,
-        "y" : 0
+        "x" : 1047,
+        "y" : 237
       }, {
         "id" : "182",
-        "x" : 0,
-        "y" : 0
+        "x" : 1842,
+        "y" : 237
       }, {
         "id" : "186",
-        "x" : 0,
-        "y" : 0
+        "x" : 1847,
+        "y" : 727
       }, {
         "id" : "189",
-        "x" : 0,
-        "y" : 0
+        "x" : 1052,
+        "y" : 727
       }, {
         "id" : "194",
-        "x" : 0,
-        "y" : 0
+        "x" : 257,
+        "y" : 727
       }, {
         "id" : "197",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "198",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 3602
       }, {
         "id" : "206",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "207",
-        "x" : 0,
-        "y" : 0
+        "x" : 1110,
+        "y" : 3597
       }, {
         "id" : "212",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "213",
-        "x" : 0,
-        "y" : 0
+        "x" : 1095,
+        "y" : 2822
       }, {
         "id" : "216",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "217",
-        "x" : 0,
-        "y" : 0
+        "x" : 199,
+        "y" : 2823
       }, {
         "id" : "219",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "220",
-        "x" : 0,
-        "y" : 0
+        "x" : 2840,
+        "y" : 147
       }, {
         "id" : "222",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "223",
-        "x" : 0,
-        "y" : 0
+        "x" : 1965,
+        "y" : 4621
       }, {
         "id" : "224",
-        "x" : 0,
-        "y" : 0
+        "x" : 100,
+        "y" : 4631
       }, {
         "id" : "225",
-        "x" : 0,
-        "y" : 0
+        "x" : 1350,
+        "y" : 4626
       }, {
         "id" : "226",
-        "x" : 0,
-        "y" : 0
+        "x" : 725,
+        "y" : 4631
       }, {
         "id" : "235",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "236",
-        "x" : 0,
-        "y" : 0
+        "x" : 3185,
+        "y" : 4632
       }, {
         "id" : "237",
-        "x" : 0,
-        "y" : 0
+        "x" : 2705,
+        "y" : 4412
       } ],
       "environment" : "Produkcja",
       "key" : "04a-wdrozenie-chmura",
       "name" : "Deployment View: System Opieki Zdrowotnej (SOZ) - Produkcja",
       "order" : 6,
       "relationships" : [ {
-        "id" : "218"
+        "id" : "218",
+        "position" : 30
       }, {
-        "id" : "221"
+        "id" : "221",
+        "position" : 65,
+        "vertices" : [ {
+          "x" : 3200,
+          "y" : 1227
+        } ]
       }, {
-        "id" : "240"
+        "id" : "240",
+        "position" : 80,
+        "vertices" : [ {
+          "x" : 2630,
+          "y" : 3747
+        }, {
+          "x" : 2630,
+          "y" : 2797
+        } ]
       }, {
-        "id" : "241"
+        "id" : "241",
+        "position" : 85,
+        "vertices" : [ {
+          "x" : 3634,
+          "y" : 3960
+        } ]
       }, {
-        "id" : "242"
+        "id" : "242",
+        "position" : 50,
+        "vertices" : [ {
+          "x" : 3225,
+          "y" : 4107
+        } ]
       }, {
-        "id" : "243"
+        "id" : "243",
+        "position" : 35
       }, {
-        "id" : "244"
+        "id" : "244",
+        "position" : 25,
+        "vertices" : [ {
+          "x" : 1019,
+          "y" : 3502
+        }, {
+          "x" : 1019,
+          "y" : 4332
+        }, {
+          "x" : 1141,
+          "y" : 4332
+        }, {
+          "x" : 1141,
+          "y" : 4532
+        }, {
+          "x" : 1025,
+          "y" : 4532
+        } ]
       }, {
-        "id" : "245"
+        "id" : "245",
+        "position" : 80,
+        "vertices" : [ {
+          "x" : 400,
+          "y" : 4457
+        } ]
       }, {
-        "id" : "246"
+        "id" : "246",
+        "position" : 75,
+        "vertices" : [ {
+          "x" : 1470,
+          "y" : 4412
+        } ]
       }, {
-        "id" : "247"
+        "id" : "247",
+        "position" : 70
       }, {
-        "id" : "248"
+        "id" : "248",
+        "position" : 80
       }, {
-        "id" : "250"
+        "id" : "250",
+        "position" : 15,
+        "vertices" : [ {
+          "x" : 2260,
+          "y" : 2852
+        } ]
       } ],
       "softwareSystemId" : "12"
     }, {
       "description" : "Wdrożenie - placówka i jej połączenie z chmurą.",
+      "dimensions" : {
+        "height" : 3682,
+        "width" : 6530
+      },
       "elements" : [ {
         "id" : "154",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "160",
-        "x" : 0,
-        "y" : 0
+        "x" : 2020,
+        "y" : 1560
       }, {
         "id" : "161",
         "x" : 0,
@@ -3213,16 +3276,16 @@
         "y" : 0
       }, {
         "id" : "169",
-        "x" : 0,
-        "y" : 0
+        "x" : 3640,
+        "y" : 2090
       }, {
         "id" : "172",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "173",
-        "x" : 0,
-        "y" : 0
+        "x" : 1960,
+        "y" : 2337
       }, {
         "id" : "227",
         "x" : 0,
@@ -3233,37 +3296,73 @@
         "y" : 0
       }, {
         "id" : "229",
-        "x" : 0,
-        "y" : 0
+        "x" : 1870,
+        "y" : 290
       }, {
         "id" : "231",
-        "x" : 0,
-        "y" : 0
+        "x" : 5330,
+        "y" : 290
       }, {
         "id" : "233",
-        "x" : 0,
-        "y" : 0
+        "x" : 3700,
+        "y" : 1030
       }, {
         "id" : "234",
-        "x" : 0,
-        "y" : 0
+        "x" : 250,
+        "y" : 935
       } ],
       "environment" : "Produkcja",
       "key" : "04b-wdrozenie-placowka",
       "name" : "Deployment View: System Opieki Zdrowotnej (SOZ) - Produkcja",
       "order" : 7,
       "relationships" : [ {
-        "id" : "176"
+        "id" : "176",
+        "vertices" : [ {
+          "x" : 2820,
+          "y" : 2665
+        }, {
+          "x" : 3230,
+          "y" : 2665
+        } ]
       }, {
-        "id" : "230"
+        "id" : "230",
+        "vertices" : [ {
+          "x" : 3230,
+          "y" : 610
+        } ]
       }, {
-        "id" : "232"
+        "id" : "232",
+        "vertices" : [ {
+          "x" : 4510,
+          "y" : 2315
+        }, {
+          "x" : 4920,
+          "y" : 610
+        } ]
       }, {
-        "id" : "249"
+        "id" : "249",
+        "vertices" : [ {
+          "x" : 1820,
+          "y" : 1125
+        } ]
       }, {
-        "id" : "250"
+        "id" : "250",
+        "vertices" : [ {
+          "x" : 2820,
+          "y" : 2237
+        }, {
+          "x" : 3230,
+          "y" : 2237
+        } ]
       }, {
-        "id" : "251"
+        "id" : "251",
+        "vertices" : [ {
+          "x" : 2820,
+          "y" : 2476
+        }, {
+          "x" : 3230,
+          "y" : 2476
+        } ]
       } ],
       "softwareSystemId" : "12"
     } ],
