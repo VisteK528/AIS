@@ -2,7 +2,7 @@
 
 systemContext soz "01-kontekst" "C4 poziom 1 - System Opieki Zdrowotnej i jego otoczenie." {
     include *
-    autoLayout lr 350 250
+    autoLayout tb 200 150
 }
 
 container soz "02-kontenery-przeglad" "C4 poziom 2 - przegląd kontenerów w pięciu warstwach. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b." {
@@ -18,7 +18,7 @@ container soz "02a-kontenery-pacjent" "C4 poziom 2 - obsługa pacjenta: wizyty, 
     include soz.appointments soz.telehealth soz.billing soz.notifications soz.eventQueue
     include soz.integration soz.database
     include nationalNode paymentGateway messaging nfz
-    autoLayout lr 300 200
+    autoLayout tb 200 150
 }
 
 container soz "02b-kontenery-klinika" "C4 poziom 2 - obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami." {
@@ -26,7 +26,7 @@ container soz "02b-kontenery-klinika" "C4 poziom 2 - obsługa kliniczna: dokumen
     include soz.doctorPanel soz.apiGateway soz.records soz.orders soz.notifications
     include soz.eventQueue soz.integration soz.blobStore soz.database
     include his lis p1 externalFacilities
-    autoLayout lr 300 200
+    autoLayout tb 200 150
 }
 
 component soz.appointments "03-komponenty-wizyty" "C4 poziom 3 - komponenty usługi Wizyty." {
@@ -39,7 +39,7 @@ component soz.appointments "03-komponenty-wizyty" "C4 poziom 3 - komponenty usł
     exclude "soz.billing -> soz.integration"
     exclude "soz.identity -> soz.database"
     exclude "soz.integration -> soz.eventQueue"
-    autoLayout lr 300 200
+    autoLayout tb 200 150
 }
 
 deployment soz prod "04a-wdrozenie-chmura" "Wdrożenie - urządzenia użytkowników, region podstawowy z trzema strefami dostępności i region zapasowy w EOG." {
@@ -52,10 +52,10 @@ deployment soz prod "04a-wdrozenie-chmura" "Wdrożenie - urządzenia użytkownik
 deployment soz prod "04b-wdrozenie-placowka" "Wdrożenie - placówka i jej połączenie z chmurą." {
     include prod.facility
     include prod.primary.vpnHub prod.primary.az.cluster.intInst prod.primary.az.cluster.services.apptInst
-    autoLayout lr 300 200
+    autoLayout tb 200 150
 }
 
 custom "05-model-danych" "Model danych" "Diagram encji - główne dane systemu i relacje między nimi." {
     include "element.tag==Encja"
-    autoLayout lr 300 200
+    autoLayout tb 200 150
 }

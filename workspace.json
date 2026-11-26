@@ -3,7 +3,7 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2026-11-26T13:28:44Z",
+  "lastModifiedDate" : "2026-11-26T14:38:39Z",
   "model" : {
     "customElements" : [ {
       "description" : "kto, kiedy, jakie dane",
@@ -275,7 +275,7 @@
           "id" : "157",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.e2f3b844-3893-4c1a-8eaa-17bde45cbae2"
+            "structurizr.dsl.identifier" : "prod.primary.web.fb4b80ce-6f37-4658-be12-7b9e4802a4c4"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -298,7 +298,7 @@
           "id" : "158",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.f6778a38-292d-42e3-887a-099b97ea906e"
+            "structurizr.dsl.identifier" : "prod.primary.web.1f1934db-cdaa-44ea-81cb-8d7cf9d3e9c6"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -327,7 +327,7 @@
           "id" : "159",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.6ad08ccb-5e20-4f73-a422-c4cb02d3e9de"
+            "structurizr.dsl.identifier" : "prod.primary.web.3318740d-4223-46bf-94bb-557c130e0ff7"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -404,7 +404,7 @@
               "id" : "178",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.869aa1a5-70b2-478b-982b-3dc165235e74"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.919ae32e-5750-4a5d-870d-cd045e8d4f06"
               },
               "relationships" : [ {
                 "description" : "Zapisuje dane",
@@ -421,7 +421,7 @@
               "id" : "182",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.cba86a92-977c-44ac-8a08-8bbaf674cd31"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.19c85712-eacb-432d-94dd-c5a317bff567"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -450,7 +450,7 @@
               "id" : "186",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.b2a6184f-c4a2-4790-941e-462724adcec3"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.887dbfc9-a8e0-4d12-aaec-46ecdee062ad"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -479,7 +479,7 @@
               "id" : "189",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.3f9f8ab7-2cf5-4655-ac69-4e80cc856be4"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.e367902d-c435-4d12-a71b-f2dac0d3a314"
               },
               "relationships" : [ {
                 "description" : "Przekazuje sprawozdania NFZ",
@@ -508,7 +508,7 @@
               "id" : "194",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.3d6f661c-1649-48bc-b0b2-341f068bf449"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.aa68845e-b868-4867-a810-a24d7ace1474"
               },
               "relationships" : [ {
                 "description" : "Wysyła pilne alerty",
@@ -765,7 +765,7 @@
           "id" : "213",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.dwNode.594915d2-dc48-49e9-a132-2a17296d6b41"
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.9aa9686b-240a-4c2f-9459-76c229a3dd79"
           },
           "tags" : "Container Instance"
         } ],
@@ -939,7 +939,7 @@
           "id" : "229",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.38bf2803-26dc-4289-97a2-dc89eef75a40"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.57682c48-957b-4362-a07d-cbf3d223cafb"
           },
           "relationships" : [ {
             "description" : "Przesyła pobyty, dokumenty i obrazy",
@@ -956,7 +956,7 @@
           "id" : "231",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.d7deb57e-4040-4aaa-8f00-8dd5369eeb98"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.4e7d0ea9-c131-46dd-b7c2-3010d5f06bf3"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -2015,9 +2015,9 @@
     "componentViews" : [ {
       "automaticLayout" : {
         "edgeSeparation" : 50,
-        "nodeSeparation" : 200,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
         "vertices" : true
       },
       "containerId" : "17",
@@ -2376,9 +2376,9 @@
     }, {
       "automaticLayout" : {
         "edgeSeparation" : 50,
-        "nodeSeparation" : 200,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
         "vertices" : true
       },
       "description" : "C4 poziom 2 - obsługa pacjenta: wizyty, teleporady, płatności, powiadomienia.",
@@ -2510,9 +2510,9 @@
     }, {
       "automaticLayout" : {
         "edgeSeparation" : 50,
-        "nodeSeparation" : 200,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
         "vertices" : true
       },
       "description" : "C4 poziom 2 - obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami.",
@@ -2625,9 +2625,9 @@
     "customViews" : [ {
       "automaticLayout" : {
         "edgeSeparation" : 50,
-        "nodeSeparation" : 200,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
         "vertices" : true
       },
       "description" : "Diagram encji - główne dane systemu i relacje między nimi.",
@@ -2927,9 +2927,9 @@
     }, {
       "automaticLayout" : {
         "edgeSeparation" : 50,
-        "nodeSeparation" : 200,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
         "vertices" : true
       },
       "description" : "Wdrożenie - placówka i jej połączenie z chmurą.",
@@ -3008,9 +3008,9 @@
     "systemContextViews" : [ {
       "automaticLayout" : {
         "edgeSeparation" : 50,
-        "nodeSeparation" : 250,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 350,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
         "vertices" : true
       },
       "description" : "C4 poziom 1 - System Opieki Zdrowotnej i jego otoczenie.",
