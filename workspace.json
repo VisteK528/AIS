@@ -3,9 +3,9 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr/diagrams/2043e716-7966-4f38-afc9-562478d4862e",
-  "lastModifiedDate" : "2026-11-26T16:15:32Z",
-  "lastModifiedUser" : "1054502192",
+  "lastModifiedAgent" : "structurizr/diagrams/d88e0dd5-496f-4d95-90d7-5618ed70b789",
+  "lastModifiedDate" : "2026-11-26T17:56:04Z",
+  "lastModifiedUser" : "822919721",
   "model" : {
     "customElements" : [ {
       "description" : "PESEL, dane osobowe, kontakt",
@@ -277,7 +277,7 @@
           "id" : "157",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.1d82b5e8-1779-4b23-8e8f-d2080453eb43"
+            "structurizr.dsl.identifier" : "prod.primary.web.7eb0c5b4-94c6-4dd2-9362-880f45b039bb"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -300,7 +300,7 @@
           "id" : "158",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.6a024a1b-91c1-4e30-ba84-f4b127c9f902"
+            "structurizr.dsl.identifier" : "prod.primary.web.9c7be07d-d50e-40ae-9d85-feba396d7af7"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -329,7 +329,7 @@
           "id" : "159",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.web.50410697-b64b-4798-9b10-2f8937d1d43f"
+            "structurizr.dsl.identifier" : "prod.primary.web.3abe0fed-6236-4246-b81e-0c217cf0d835"
           },
           "relationships" : [ {
             "description" : "Wywołuje API",
@@ -406,7 +406,7 @@
               "id" : "178",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.88fedd92-82d6-4070-8215-80f7a3d2837b"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.1fcaa329-ee69-42fb-a138-12b032463d03"
               },
               "relationships" : [ {
                 "description" : "Zapisuje dane",
@@ -423,7 +423,7 @@
               "id" : "182",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.a45d78ab-9687-4465-a16e-1d0f891f1797"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.689ef817-bd3f-4f25-8f13-e6a81dfbfbfb"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -452,7 +452,7 @@
               "id" : "186",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.a1ec204b-0296-4456-8227-dc2f2c94970f"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.3e531acd-d366-4086-9c73-07607efd5baa"
               },
               "relationships" : [ {
                 "description" : "Publikuje zdarzenia",
@@ -481,7 +481,7 @@
               "id" : "189",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.68f771a7-c9a5-4cb1-be77-fa1701f4d498"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.7acdc8ce-ecab-4e7e-a7fc-083b07b3b34f"
               },
               "relationships" : [ {
                 "description" : "Przekazuje sprawozdania NFZ",
@@ -510,7 +510,7 @@
               "id" : "194",
               "instanceId" : 1,
               "properties" : {
-                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.3c703973-db38-4886-8cc4-2329d566c1ac"
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.e829c1a1-9efe-4e88-bbf3-fed20a084a11"
               },
               "relationships" : [ {
                 "description" : "Wysyła pilne alerty",
@@ -767,7 +767,7 @@
           "id" : "213",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.primary.dwNode.21b9f13d-f651-4e82-9cae-60d9882de4f6"
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.19309379-617f-4cdd-ad59-ad8ed8af2f01"
           },
           "tags" : "Container Instance"
         } ],
@@ -941,7 +941,7 @@
           "id" : "229",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.281e27f0-c42d-407e-ab83-363f486b4ccf"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.fb722b02-e815-4fb1-b83a-5c36fe58e80d"
           },
           "relationships" : [ {
             "description" : "Przesyła pobyty, dokumenty i obrazy",
@@ -958,7 +958,7 @@
           "id" : "231",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.60a77ae0-7792-4013-9e92-ded8b12165b3"
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.f9d6c6ad-0826-4c38-8e2f-9f1982e99cd7"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -2240,97 +2240,97 @@
     "containerViews" : [ {
       "description" : "C4 poziom 2 - przegląd kontenerów w pięciu warstwach. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b.",
       "dimensions" : {
-        "height" : 7210,
-        "width" : 9550
+        "height" : 6992,
+        "width" : 5216
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 200,
-        "y" : 352
+        "x" : 1055,
+        "y" : 395
       }, {
         "id" : "2",
-        "x" : 200,
-        "y" : 1402
+        "x" : 2930,
+        "y" : 450
       }, {
         "id" : "3",
-        "x" : 200,
-        "y" : 2352
+        "x" : 3990,
+        "y" : 435
       }, {
         "id" : "13",
-        "x" : 2020,
-        "y" : 289
+        "x" : 1150,
+        "y" : 1820
       }, {
         "id" : "14",
-        "x" : 2155,
-        "y" : 789
+        "x" : 2261,
+        "y" : 1747
       }, {
         "id" : "15",
-        "x" : 2020,
-        "y" : 1627
+        "x" : 3030,
+        "y" : 1815
       }, {
         "id" : "16",
-        "x" : 2020,
-        "y" : 2577
+        "x" : 4090,
+        "y" : 1820
       }, {
         "id" : "17",
-        "x" : 2730,
-        "y" : 3695
+        "x" : 1322,
+        "y" : 3914
       }, {
         "id" : "26",
-        "x" : 3495,
-        "y" : 3680
+        "x" : 1804,
+        "y" : 4449
       }, {
         "id" : "27",
-        "x" : 5300,
-        "y" : 3952
+        "x" : 2264,
+        "y" : 3914
       }, {
         "id" : "28",
-        "x" : 5300,
-        "y" : 4452
+        "x" : 2746,
+        "y" : 4449
       }, {
         "id" : "29",
-        "x" : 5300,
-        "y" : 4952
+        "x" : 3207,
+        "y" : 3914
       }, {
         "id" : "30",
-        "x" : 5300,
-        "y" : 5452
+        "x" : 3689,
+        "y" : 4449
       }, {
         "id" : "31",
-        "x" : 2020,
-        "y" : 6074
+        "x" : 4100,
+        "y" : 6059
       }, {
         "id" : "32",
-        "x" : 3660,
-        "y" : 5777
+        "x" : 4100,
+        "y" : 5305
       }, {
         "id" : "33",
-        "x" : 8530,
-        "y" : 3952
+        "x" : 1124,
+        "y" : 6059
       }, {
         "id" : "34",
-        "x" : 8530,
-        "y" : 6277
+        "x" : 2775,
+        "y" : 6059
       }, {
         "id" : "35",
-        "x" : 8530,
-        "y" : 5777
+        "x" : 1949,
+        "y" : 6059
       }, {
         "id" : "36",
-        "x" : 8530,
-        "y" : 2264
+        "x" : 299,
+        "y" : 6059
       }, {
         "id" : "37",
-        "x" : 3660,
-        "y" : 1339
+        "x" : 2530,
+        "y" : 2665
       }, {
         "id" : "38",
-        "x" : 6890,
-        "y" : 2092
+        "x" : 491,
+        "y" : 3145
       }, {
         "id" : "39",
-        "x" : 5300,
-        "y" : 335
+        "x" : 491,
+        "y" : 2560
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "02-kontenery-przeglad",
@@ -2338,95 +2338,89 @@
       "order" : 2,
       "relationships" : [ {
         "id" : "100",
-        "vertices" : [ {
-          "x" : 2790,
-          "y" : 6002
-        } ]
+        "position" : 47
       }, {
         "id" : "105",
+        "position" : 47,
         "vertices" : [ {
-          "x" : 6070,
-          "y" : 3089
-        }, {
-          "x" : 8480,
-          "y" : 3089
+          "x" : 1484,
+          "y" : 5145
         } ]
       }, {
         "id" : "106",
+        "position" : 40,
         "vertices" : [ {
-          "x" : 8480,
-          "y" : 3677
+          "x" : 2164,
+          "y" : 5149
         } ]
       }, {
-        "id" : "107"
+        "id" : "107",
+        "position" : 44,
+        "vertices" : [ {
+          "x" : 2624,
+          "y" : 5144
+        } ]
       }, {
         "id" : "108",
+        "position" : 38,
         "vertices" : [ {
-          "x" : 8480,
-          "y" : 4677
+          "x" : 3106,
+          "y" : 5149
         } ]
       }, {
         "id" : "109",
+        "position" : 37,
         "vertices" : [ {
-          "x" : 8480,
-          "y" : 5177
+          "x" : 3567,
+          "y" : 5184
         } ]
       }, {
         "id" : "110",
+        "position" : 33,
         "vertices" : [ {
-          "x" : 8480,
-          "y" : 5677
+          "x" : 4049,
+          "y" : 5169
         } ]
       }, {
         "id" : "111",
+        "position" : 88,
         "vertices" : [ {
-          "x" : 7660,
-          "y" : 2229
-        }, {
-          "x" : 8480,
-          "y" : 2229
+          "x" : 1024,
+          "y" : 5764
         } ]
       }, {
         "id" : "112",
+        "position" : 85,
         "vertices" : [ {
-          "x" : 7660,
-          "y" : 2689
-        }, {
-          "x" : 8480,
-          "y" : 2689
+          "x" : 659,
+          "y" : 5784
         } ]
       }, {
         "id" : "115",
-        "vertices" : [ {
-          "x" : 2790,
-          "y" : 6502
-        } ]
+        "position" : 47
       }, {
         "id" : "117",
+        "position" : 58,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 560
+          "x" : 1436,
+          "y" : 2785
         } ]
       }, {
         "id" : "136",
+        "position" : 39,
         "vertices" : [ {
-          "x" : 6070,
-          "y" : 3402
-        }, {
-          "x" : 6480,
-          "y" : 2654
+          "x" : 1160,
+          "y" : 4139
         } ]
       }, {
         "id" : "72",
-        "vertices" : [ {
-          "x" : 1510,
-          "y" : 514
-        } ]
+        "position" : 44
       }, {
         "id" : "74",
+        "position" : 48,
         "vertices" : [ {
-          "x" : 1510,
-          "y" : 1089
+          "x" : 2486,
+          "y" : 1490
         } ]
       }, {
         "id" : "75"
@@ -2434,90 +2428,88 @@
         "id" : "77"
       }, {
         "id" : "79",
+        "position" : 51,
         "vertices" : [ {
-          "x" : 3610,
-          "y" : 514
+          "x" : 1515,
+          "y" : 2410
         } ]
       }, {
         "id" : "80",
+        "position" : 55,
         "vertices" : [ {
-          "x" : 3610,
-          "y" : 1089
+          "x" : 2491,
+          "y" : 2470
         } ]
       }, {
         "id" : "81",
+        "position" : 61,
         "vertices" : [ {
-          "x" : 3610,
-          "y" : 1852
+          "x" : 3395,
+          "y" : 2455
         } ]
       }, {
         "id" : "82",
+        "position" : 46,
         "vertices" : [ {
-          "x" : 3610,
-          "y" : 2802
+          "x" : 4455,
+          "y" : 2450
         } ]
       }, {
         "id" : "83",
+        "position" : 57,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 867
-        }, {
-          "x" : 6480,
-          "y" : 867
+          "x" : 1451,
+          "y" : 3370
         } ]
       }, {
         "id" : "84",
+        "position" : 64,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 949
-        }, {
-          "x" : 5250,
-          "y" : 949
+          "x" : 1682,
+          "y" : 3589
         } ]
       }, {
         "id" : "85",
+        "position" : 53,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 1687
-        }, {
-          "x" : 5250,
-          "y" : 1687
+          "x" : 2164,
+          "y" : 3584
         } ]
       }, {
         "id" : "86",
+        "position" : 57,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 2454
-        }, {
-          "x" : 5250,
-          "y" : 2454
+          "x" : 2624,
+          "y" : 3569
         } ]
       }, {
         "id" : "87",
+        "position" : 44,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 2568
-        }, {
-          "x" : 5250,
-          "y" : 2568
+          "x" : 3106,
+          "y" : 3569
         } ]
       }, {
         "id" : "88",
+        "position" : 59,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 2682
-        }, {
-          "x" : 5250,
-          "y" : 2682
+          "x" : 3567,
+          "y" : 3579
         } ]
       }, {
         "id" : "98",
+        "position" : 29,
         "vertices" : [ {
-          "x" : 4430,
-          "y" : 5677
+          "x" : 4460,
+          "y" : 5140
         } ]
       }, {
-        "id" : "99"
+        "id" : "99",
+        "position" : 61,
+        "vertices" : [ {
+          "x" : 3585,
+          "y" : 5530
+        } ]
       } ],
       "softwareSystemId" : "12"
     }, {
