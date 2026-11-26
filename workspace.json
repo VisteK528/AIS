@@ -3,202 +3,2195 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2026-11-25T16:58:01Z",
+  "lastModifiedDate" : "2026-11-26T12:28:08Z",
   "model" : {
-    "people" : [ {
-      "description" : "Kupuje produkty w sklepie internetowym.",
-      "id" : "1",
-      "name" : "Klient",
+    "customElements" : [ {
+      "description" : "kto, kiedy, jakie dane",
+      "group" : "Model danych",
+      "id" : "51",
+      "metadata" : "Encja",
+      "name" : "Wpis audytu",
       "properties" : {
-        "structurizr.dsl.identifier" : "customer"
+        "structurizr.dsl.identifier" : "eAudit"
       },
       "relationships" : [ {
-        "description" : "Przegląda produkty i składa zamówienia",
-        "destinationId" : "4",
-        "id" : "11",
-        "sourceId" : "1",
-        "tags" : "Relationship",
-        "technology" : "HTTPS"
+        "description" : "dotyczy (N:1)",
+        "destinationId" : "38",
+        "id" : "66",
+        "sourceId" : "51",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "kwota, status, zwrot",
+      "group" : "Model danych",
+      "id" : "50",
+      "metadata" : "Encja",
+      "name" : "Płatność",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ePayment"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "rodzaj, zakres, ważność",
+      "group" : "Model danych",
+      "id" : "49",
+      "metadata" : "Encja",
+      "name" : "Zgoda / Upoważnienie",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eConsent"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "modalność, obrazy, opis",
+      "group" : "Model danych",
+      "id" : "48",
+      "metadata" : "Encja",
+      "name" : "Badanie obrazowe",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eImaging"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "wartość, flaga krytyczna, wersja",
+      "group" : "Model danych",
+      "id" : "47",
+      "metadata" : "Encja",
+      "name" : "Wynik badania",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eResult"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "rodzaj badania, status",
+      "group" : "Model danych",
+      "id" : "46",
+      "metadata" : "Encja",
+      "name" : "Zlecenie",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eOrder"
+      },
+      "relationships" : [ {
+        "description" : "ma wyniki (1:N)",
+        "destinationId" : "47",
+        "id" : "64",
+        "sourceId" : "46",
+        "tags" : "Relationship"
       }, {
-        "description" : "Przegląda produkty i składa zamówienia",
-        "destinationId" : "3",
-        "id" : "12",
-        "linkedRelationshipId" : "11",
+        "description" : "realizowane jako (1:0..1)",
+        "destinationId" : "48",
+        "id" : "65",
+        "sourceId" : "46",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "treść, rozpoznania, wersja, podpis",
+      "group" : "Model danych",
+      "id" : "45",
+      "metadata" : "Encja",
+      "name" : "Dokument medyczny",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eDoc"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "tryb (wideo / czat), status",
+      "group" : "Model danych",
+      "id" : "44",
+      "metadata" : "Encja",
+      "name" : "Telekonsultacja",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eTele"
+      },
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "typ, status, finansowanie (NFZ / prywatne)",
+      "group" : "Model danych",
+      "id" : "43",
+      "metadata" : "Encja",
+      "name" : "Wizyta",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eVisit"
+      },
+      "relationships" : [ {
+        "description" : "odbywa się jako (1:0..1)",
+        "destinationId" : "44",
+        "id" : "59",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      }, {
+        "description" : "opłacana przez (1:N)",
+        "destinationId" : "50",
+        "id" : "60",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      }, {
+        "description" : "dokumentowana w (1:N)",
+        "destinationId" : "45",
+        "id" : "61",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      }, {
+        "description" : "skutkuje (1:N)",
+        "destinationId" : "46",
+        "id" : "62",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "początek, koniec, status",
+      "group" : "Model danych",
+      "id" : "42",
+      "metadata" : "Encja",
+      "name" : "Termin",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eSlot"
+      },
+      "relationships" : [ {
+        "description" : "rezerwowany przez (1:0..1)",
+        "destinationId" : "43",
+        "id" : "58",
+        "sourceId" : "42",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "godziny pracy, tryb wizyt",
+      "group" : "Model danych",
+      "id" : "41",
+      "metadata" : "Encja",
+      "name" : "Grafik",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eSchedule"
+      },
+      "relationships" : [ {
+        "description" : "dzieli się na (1:N)",
+        "destinationId" : "42",
+        "id" : "57",
+        "sourceId" : "41",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "nr PWZ, specjalizacja, role",
+      "group" : "Model danych",
+      "id" : "40",
+      "metadata" : "Encja",
+      "name" : "Pracownik",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eStaff"
+      },
+      "relationships" : [ {
+        "description" : "pracuje wg (1:N)",
+        "destinationId" : "41",
+        "id" : "56",
+        "sourceId" : "40",
+        "tags" : "Relationship"
+      }, {
+        "description" : "podpisuje (1:N)",
+        "destinationId" : "45",
+        "id" : "63",
+        "sourceId" : "40",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "nazwa, typ, adres, cennik",
+      "group" : "Model danych",
+      "id" : "39",
+      "metadata" : "Encja",
+      "name" : "Placówka",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eFacility"
+      },
+      "relationships" : [ {
+        "description" : "prowadzi (1:N)",
+        "destinationId" : "41",
+        "id" : "55",
+        "sourceId" : "39",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    }, {
+      "description" : "PESEL, dane osobowe, kontakt",
+      "group" : "Model danych",
+      "id" : "38",
+      "metadata" : "Encja",
+      "name" : "Pacjent",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ePatient"
+      },
+      "relationships" : [ {
+        "description" : "umawia (1:N)",
+        "destinationId" : "43",
+        "id" : "52",
+        "sourceId" : "38",
+        "tags" : "Relationship"
+      }, {
+        "description" : "udziela (1:N)",
+        "destinationId" : "49",
+        "id" : "53",
+        "sourceId" : "38",
+        "tags" : "Relationship"
+      }, {
+        "description" : "posiada (1:N)",
+        "destinationId" : "45",
+        "id" : "54",
+        "sourceId" : "38",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Encja"
+    } ],
+    "deploymentNodes" : [ {
+      "children" : [ {
+        "children" : [ {
+          "children" : [ {
+            "containerInstances" : [ {
+              "containerId" : "17",
+              "deploymentGroups" : [ "Region podstawowy" ],
+              "environment" : "Produkcja",
+              "id" : "157",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.apptInst"
+              },
+              "relationships" : [ {
+                "description" : "Sprawdza uprawnienia",
+                "destinationId" : "151",
+                "id" : "159",
+                "linkedRelationshipId" : "127",
+                "sourceId" : "157"
+              }, {
+                "description" : "Weryfikuje uprawnienia NFZ",
+                "destinationId" : "153",
+                "id" : "160",
+                "linkedRelationshipId" : "97",
+                "sourceId" : "157"
+              }, {
+                "description" : "Publikuje zdarzenia",
+                "destinationId" : "154",
+                "id" : "161",
+                "linkedRelationshipId" : "88",
+                "sourceId" : "157"
+              }, {
+                "description" : "Zleca płatność i zwrot",
+                "destinationId" : "171",
+                "id" : "174",
+                "linkedRelationshipId" : "96",
+                "sourceId" : "157"
+              }, {
+                "description" : "Zapisuje dane",
+                "destinationId" : "178",
+                "id" : "180",
+                "linkedRelationshipId" : "99",
+                "sourceId" : "157"
+              }, {
+                "description" : "Przesyła plan dnia",
+                "destinationId" : "207",
+                "id" : "217",
+                "sourceId" : "157",
+                "tags" : "Relationship,Infrastruktura"
+              } ],
+              "tags" : "Container Instance"
+            }, {
+              "containerId" : "26",
+              "deploymentGroups" : [ "Region podstawowy" ],
+              "environment" : "Produkcja",
+              "id" : "162",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.d856f43d-d5be-49c1-9651-82dc9c0d20a5"
+              },
+              "relationships" : [ {
+                "description" : "Zapisuje dane",
+                "destinationId" : "178",
+                "id" : "181",
+                "linkedRelationshipId" : "100",
+                "sourceId" : "162"
+              } ],
+              "tags" : "Container Instance"
+            }, {
+              "containerId" : "27",
+              "deploymentGroups" : [ "Region podstawowy" ],
+              "environment" : "Produkcja",
+              "id" : "164",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.be0b30b6-015f-4b3c-be80-3bcca7cf60f2"
+              },
+              "relationships" : [ {
+                "description" : "Publikuje zdarzenia",
+                "destinationId" : "154",
+                "id" : "166",
+                "linkedRelationshipId" : "89",
+                "sourceId" : "164"
+              }, {
+                "description" : "Zapisuje dane",
+                "destinationId" : "178",
+                "id" : "182",
+                "linkedRelationshipId" : "101",
+                "sourceId" : "164"
+              }, {
+                "description" : "Przechowuje dokumenty",
+                "destinationId" : "187",
+                "id" : "189",
+                "linkedRelationshipId" : "106",
+                "sourceId" : "164"
+              } ],
+              "tags" : "Container Instance"
+            }, {
+              "containerId" : "28",
+              "deploymentGroups" : [ "Region podstawowy" ],
+              "environment" : "Produkcja",
+              "id" : "168",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.dc8964d6-fd5d-4fd7-bc31-a603629ce71c"
+              },
+              "relationships" : [ {
+                "description" : "Publikuje zdarzenia",
+                "destinationId" : "154",
+                "id" : "170",
+                "linkedRelationshipId" : "90",
+                "sourceId" : "168"
+              }, {
+                "description" : "Zapisuje dane",
+                "destinationId" : "178",
+                "id" : "183",
+                "linkedRelationshipId" : "102",
+                "sourceId" : "168"
+              }, {
+                "description" : "Przechowuje wyniki PDF",
+                "destinationId" : "187",
+                "id" : "190",
+                "linkedRelationshipId" : "107",
+                "sourceId" : "168"
+              } ],
+              "tags" : "Container Instance"
+            }, {
+              "containerId" : "29",
+              "deploymentGroups" : [ "Region podstawowy" ],
+              "environment" : "Produkcja",
+              "id" : "171",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.fdff917c-4c6f-4022-8c40-237e725009cd"
+              },
+              "relationships" : [ {
+                "description" : "Publikuje zdarzenia",
+                "destinationId" : "154",
+                "id" : "173",
+                "linkedRelationshipId" : "91",
+                "sourceId" : "171"
+              }, {
+                "description" : "Zapisuje dane",
+                "destinationId" : "178",
+                "id" : "184",
+                "linkedRelationshipId" : "103",
+                "sourceId" : "171"
+              } ],
+              "tags" : "Container Instance"
+            }, {
+              "containerId" : "30",
+              "deploymentGroups" : [ "Region podstawowy" ],
+              "environment" : "Produkcja",
+              "id" : "175",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "prod.primary.az.cluster.services.9dd010e9-f8e5-4f26-a309-c61ea285c3b9"
+              },
+              "relationships" : [ {
+                "description" : "Zapisuje dane",
+                "destinationId" : "178",
+                "id" : "185",
+                "linkedRelationshipId" : "104",
+                "sourceId" : "175"
+              } ],
+              "tags" : "Container Instance"
+            } ],
+            "description" : "Wizyty, Telekonsultacje, Dokumentacja, Zlecenia i wyniki, Rozliczenia, Powiadomienia.",
+            "environment" : "Produkcja",
+            "id" : "156",
+            "instances" : "1",
+            "name" : "Usługi aplikacyjne",
+            "properties" : {
+              "structurizr.dsl.identifier" : "prod.primary.az.cluster.services"
+            },
+            "tags" : "Element,Deployment Node"
+          } ],
+          "containerInstances" : [ {
+            "containerId" : "36",
+            "deploymentGroups" : [ "Region podstawowy" ],
+            "environment" : "Produkcja",
+            "id" : "150",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "prod.primary.az.cluster.gwInst"
+            },
+            "relationships" : [ {
+              "description" : "Weryfikuje dostęp",
+              "destinationId" : "151",
+              "id" : "152",
+              "linkedRelationshipId" : "78",
+              "sourceId" : "150"
+            }, {
+              "description" : "Przekazuje żądania",
+              "destinationId" : "157",
+              "id" : "158",
+              "linkedRelationshipId" : "79",
+              "sourceId" : "150"
+            }, {
+              "description" : "Przekazuje żądania",
+              "destinationId" : "162",
+              "id" : "163",
+              "linkedRelationshipId" : "80",
+              "sourceId" : "150"
+            }, {
+              "description" : "Przekazuje żądania",
+              "destinationId" : "164",
+              "id" : "165",
+              "linkedRelationshipId" : "81",
+              "sourceId" : "150"
+            }, {
+              "description" : "Przekazuje żądania",
+              "destinationId" : "168",
+              "id" : "169",
+              "linkedRelationshipId" : "82",
+              "sourceId" : "150"
+            }, {
+              "description" : "Przekazuje żądania",
+              "destinationId" : "171",
+              "id" : "172",
+              "linkedRelationshipId" : "83",
+              "sourceId" : "150"
+            }, {
+              "description" : "Udostępnia raporty",
+              "destinationId" : "192",
+              "id" : "193",
+              "linkedRelationshipId" : "84",
+              "sourceId" : "150"
+            }, {
+              "description" : "Wysyła metryki i logi",
+              "destinationId" : "195",
+              "id" : "210",
+              "sourceId" : "150",
+              "tags" : "Relationship,Infrastruktura"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "37",
+            "deploymentGroups" : [ "Region podstawowy" ],
+            "environment" : "Produkcja",
+            "id" : "151",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "prod.primary.az.cluster.idInst"
+            },
+            "relationships" : [ {
+              "description" : "Zapisuje dane",
+              "destinationId" : "178",
+              "id" : "179",
+              "linkedRelationshipId" : "105",
+              "sourceId" : "151"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "31",
+            "deploymentGroups" : [ "Region podstawowy" ],
+            "environment" : "Produkcja",
+            "id" : "153",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "prod.primary.az.cluster.intInst"
+            },
+            "relationships" : [ {
+              "description" : "Wymienia komunikaty",
+              "destinationId" : "154",
+              "id" : "155",
+              "linkedRelationshipId" : "95",
+              "sourceId" : "153"
+            }, {
+              "description" : "Archiwizuje obrazy",
+              "destinationId" : "187",
+              "id" : "188",
+              "linkedRelationshipId" : "108",
+              "sourceId" : "153"
+            }, {
+              "description" : "Przesyła zlecenia, odbiera wyniki",
+              "destinationId" : "205",
+              "id" : "206",
+              "linkedRelationshipId" : "117",
+              "sourceId" : "153"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "32",
+            "deploymentGroups" : [ "Region podstawowy" ],
+            "environment" : "Produkcja",
+            "id" : "154",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "prod.primary.az.cluster.queueInst"
+            },
+            "relationships" : [ {
+              "description" : "Dostarcza wyniki i dokumenty",
+              "destinationId" : "164",
+              "id" : "167",
+              "linkedRelationshipId" : "92",
+              "sourceId" : "154"
+            }, {
+              "description" : "Dostarcza zdarzenia",
+              "destinationId" : "175",
+              "id" : "176",
+              "linkedRelationshipId" : "93",
+              "sourceId" : "154"
+            }, {
+              "description" : "Zasila danymi (pseudonimizacja)",
+              "destinationId" : "192",
+              "id" : "194",
+              "linkedRelationshipId" : "94",
+              "sourceId" : "154"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "description" : "Autoskalowanie, wdrożenia bez przestojów (NFR-SKA-03, NFR-DOS-05).",
+          "environment" : "Produkcja",
+          "id" : "149",
+          "instances" : "1",
+          "name" : "Klaster kontenerów",
+          "properties" : {
+            "structurizr.dsl.identifier" : "prod.primary.az.cluster"
+          },
+          "tags" : "Element,Deployment Node"
+        } ],
+        "description" : "Każda strefa ma pełny zestaw usług; awaria strefy nie przerywa pracy.",
+        "environment" : "Produkcja",
+        "id" : "148",
+        "instances" : "3",
+        "name" : "Strefy dostępności A, B, C",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.az"
+        },
+        "tags" : "Element,Deployment Node,"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "33",
+          "deploymentGroups" : [ "Region podstawowy" ],
+          "environment" : "Produkcja",
+          "id" : "178",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "prod.primary.dbNode.dbInst"
+          },
+          "relationships" : [ {
+            "description" : "Replikuje dane",
+            "destinationId" : "198",
+            "id" : "211",
+            "sourceId" : "178",
+            "tags" : "Relationship,Infrastruktura"
+          }, {
+            "description" : "Kopia zapasowa",
+            "destinationId" : "200",
+            "id" : "213",
+            "sourceId" : "178",
+            "tags" : "Relationship,Infrastruktura"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Węzeł główny w strefie A, repliki w strefach B i C.",
+        "environment" : "Produkcja",
+        "id" : "177",
+        "instances" : "1",
+        "name" : "Baza relacyjna",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.dbNode"
+        },
+        "tags" : "Element,Deployment Node"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "34",
+          "deploymentGroups" : [ "Region podstawowy" ],
+          "environment" : "Produkcja",
+          "id" : "187",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "prod.primary.blobNode.blobInst"
+          },
+          "relationships" : [ {
+            "description" : "Replikuje obiekty",
+            "destinationId" : "199",
+            "id" : "212",
+            "sourceId" : "187",
+            "tags" : "Relationship,Infrastruktura"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Warstwy gorąca i zimna; dane szyfrowane.",
+        "environment" : "Produkcja",
+        "id" : "186",
+        "instances" : "1",
+        "name" : "Magazyn obiektów",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.blobNode"
+        },
+        "tags" : "Element,Deployment Node"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "35",
+          "deploymentGroups" : [ "Region podstawowy" ],
+          "environment" : "Produkcja",
+          "id" : "192",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "prod.primary.dwNode.acc222a0-e00d-4bfa-87cd-eb704e3c1750"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Oddzielony od baz operacyjnych (NFR-WYD-06).",
+        "environment" : "Produkcja",
+        "id" : "191",
+        "instances" : "1",
+        "name" : "Magazyn analityczny",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.dwNode"
+        },
+        "tags" : "Element,Deployment Node"
+      } ],
+      "description" : "Chmura publiczna na terenie EOG (NFR-NIE-01, NFR-ZGO-04).",
+      "environment" : "Produkcja",
+      "id" : "145",
+      "infrastructureNodes" : [ {
+        "description" : "Rozdziela ruch między strefy, filtruje ataki.",
+        "environment" : "Produkcja",
+        "id" : "146",
+        "name" : "Równoważenie obciążenia",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.lb"
+        },
+        "relationships" : [ {
+          "description" : "Kieruje ruch",
+          "destinationId" : "150",
+          "id" : "209",
+          "sourceId" : "146",
+          "tags" : "Relationship,Infrastruktura"
+        }, {
+          "description" : "Przełącza ruch po awarii regionu",
+          "destinationId" : "197",
+          "id" : "214",
+          "sourceId" : "146",
+          "tags" : "Relationship,Infrastruktura"
+        } ],
+        "tags" : "Element,Infrastructure Node"
+      }, {
+        "description" : "Szyfrowane połączenia z placówkami.",
+        "environment" : "Produkcja",
+        "id" : "147",
+        "name" : "Brama VPN",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.vpnHub"
+        },
+        "relationships" : [ {
+          "description" : "Przekazuje komunikaty placówki",
+          "destinationId" : "153",
+          "id" : "216",
+          "sourceId" : "147",
+          "tags" : "Relationship,Infrastruktura"
+        } ],
+        "tags" : "Element,Infrastructure Node"
+      }, {
+        "description" : "Metryki, alerty, scentralizowane logi bez danych pacjentów (NFR-MON-01..04).",
+        "environment" : "Produkcja",
+        "id" : "195",
+        "name" : "Monitorowanie i logi",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.primary.monitoring"
+        },
+        "tags" : "Element,Infrastructure Node"
+      } ],
+      "instances" : "1",
+      "name" : "Region podstawowy (EOG)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "prod.primary"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "description" : "Przejmuje pracę po awarii regionu: RPO ≤ 5 min, RTO 1–4 h (NFR-NIE-02/03).",
+      "environment" : "Produkcja",
+      "id" : "196",
+      "infrastructureNodes" : [ {
+        "description" : "Usługi uruchamiane przy przełączeniu regionu.",
+        "environment" : "Produkcja",
+        "id" : "197",
+        "name" : "Klaster w gotowości",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.dr.standby"
+        },
+        "tags" : "Element,Infrastructure Node"
+      }, {
+        "description" : "Gotowa do przejęcia roli bazy głównej.",
+        "environment" : "Produkcja",
+        "id" : "198",
+        "name" : "Replika bazy relacyjnej",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.dr.drDb"
+        },
+        "tags" : "Element,Infrastructure Node"
+      }, {
+        "description" : "Kopia obrazów i dokumentów.",
+        "environment" : "Produkcja",
+        "id" : "199",
+        "name" : "Replika magazynu obiektów",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.dr.drBlob"
+        },
+        "tags" : "Element,Infrastructure Node"
+      }, {
+        "description" : "Codzienne, szyfrowane, niemodyfikowalne (NFR-NIE-04).",
+        "environment" : "Produkcja",
+        "id" : "200",
+        "name" : "Kopie zapasowe",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.dr.backups"
+        },
+        "tags" : "Element,Infrastructure Node"
+      } ],
+      "instances" : "1",
+      "name" : "Region zapasowy (EOG)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "prod.dr"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "children" : [ {
+        "description" : "Pozostają poza SOZ (FR-INT-01..03).",
+        "environment" : "Produkcja",
+        "id" : "202",
+        "instances" : "1",
+        "name" : "Systemy placówki",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.facility.hospitalSystems"
+        },
+        "softwareSystemInstances" : [ {
+          "deploymentGroups" : [ "Region podstawowy" ],
+          "environment" : "Produkcja",
+          "id" : "203",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.317cd3c1-43d9-4d24-bfcc-2469bc8f9a3c"
+          },
+          "relationships" : [ {
+            "description" : "Przesyła pobyty, dokumenty i obrazy",
+            "destinationId" : "153",
+            "id" : "204",
+            "linkedRelationshipId" : "115",
+            "sourceId" : "203"
+          } ],
+          "softwareSystemId" : "4",
+          "tags" : "Software System Instance"
+        }, {
+          "deploymentGroups" : [ "Region podstawowy" ],
+          "environment" : "Produkcja",
+          "id" : "205",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "prod.facility.hospitalSystems.be2da94d-e2fc-445c-97bb-028f357eb391"
+          },
+          "softwareSystemId" : "5",
+          "tags" : "Software System Instance"
+        } ],
+        "tags" : "Element,Deployment Node"
+      } ],
+      "description" : "Każdy z 5 szpitali i 20 przychodni.",
+      "environment" : "Produkcja",
+      "id" : "201",
+      "infrastructureNodes" : [ {
+        "description" : "Lista wizyt i dane pacjentów na bieżący dzień przy braku łączności (NFR-DOS-06).",
+        "environment" : "Produkcja",
+        "id" : "207",
+        "name" : "Węzeł awaryjny",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.facility.edgeNode"
+        },
+        "tags" : "Element,Infrastructure Node"
+      }, {
+        "description" : "Szyfrowany tunel do chmury.",
+        "environment" : "Produkcja",
+        "id" : "208",
+        "name" : "Router VPN",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod.facility.facilityVpn"
+        },
+        "relationships" : [ {
+          "description" : "Tunel VPN",
+          "destinationId" : "147",
+          "id" : "215",
+          "sourceId" : "208",
+          "tags" : "Relationship,Infrastruktura"
+        } ],
+        "tags" : "Element,Infrastructure Node"
+      } ],
+      "instances" : "25",
+      "name" : "Placówka",
+      "properties" : {
+        "structurizr.dsl.identifier" : "prod.facility"
+      },
+      "tags" : "Element,Deployment Node,"
+    } ],
+    "people" : [ {
+      "description" : "Umawia wizyty, przegląda dokumentację, odbywa teleporady. Także opiekun lub pełnomocnik.",
+      "id" : "1",
+      "name" : "Pacjent",
+      "properties" : {
+        "structurizr.dsl.identifier" : "patient",
+        "Wymagania" : "FR-WIZ-01/05, FR-TEL-01/09, FR-DOK-01, FR-ROZ-02, FR-IAM-01/04/05"
+      },
+      "relationships" : [ {
+        "description" : "Umawia wizyty, przegląda wyniki",
+        "destinationId" : "13",
+        "id" : "67",
         "sourceId" : "1",
-        "technology" : "HTTPS"
+        "tags" : "Relationship"
+      }, {
+        "description" : "Umawia wizyty, przegląda wyniki",
+        "destinationId" : "12",
+        "id" : "68",
+        "linkedRelationshipId" : "67",
+        "sourceId" : "1"
+      }, {
+        "description" : "Umawia wizyty, odbiera powiadomienia",
+        "destinationId" : "14",
+        "id" : "69",
+        "sourceId" : "1",
+        "tags" : "Relationship"
       } ],
       "tags" : "Element,Person"
     }, {
-      "description" : "Zarządza katalogiem produktów.",
+      "description" : "Prowadzi dokumentację, zleca badania, przegląda wyniki i obrazy.",
       "id" : "2",
-      "name" : "Administrator",
+      "name" : "Lekarz",
       "properties" : {
-        "structurizr.dsl.identifier" : "admin"
+        "structurizr.dsl.identifier" : "doctor",
+        "Wymagania" : "FR-DOK-03..06, FR-ZLE-01/02/07, FR-TEL-09"
       },
       "relationships" : [ {
-        "description" : "Zarządza katalogiem",
-        "destinationId" : "4",
-        "id" : "13",
+        "description" : "Prowadzi leczenie",
+        "destinationId" : "15",
+        "id" : "70",
         "sourceId" : "2",
-        "tags" : "Relationship",
-        "technology" : "HTTPS"
+        "tags" : "Relationship"
       }, {
-        "description" : "Zarządza katalogiem",
-        "destinationId" : "3",
-        "id" : "14",
-        "linkedRelationshipId" : "13",
-        "sourceId" : "2",
-        "technology" : "HTTPS"
+        "description" : "Prowadzi leczenie",
+        "destinationId" : "12",
+        "id" : "71",
+        "linkedRelationshipId" : "70",
+        "sourceId" : "2"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Rejestracja, zarząd placówek i analitycy.",
+      "id" : "3",
+      "name" : "Administracja",
+      "properties" : {
+        "structurizr.dsl.identifier" : "staff",
+        "Wymagania" : "FR-WIZ-06..08, FR-ROZ-01/06, FR-ANA-01..05, FR-IAM-02"
+      },
+      "relationships" : [ {
+        "description" : "Zarządza placówkami, analizuje dane",
+        "destinationId" : "16",
+        "id" : "72",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Zarządza placówkami, analizuje dane",
+        "destinationId" : "12",
+        "id" : "73",
+        "linkedRelationshipId" : "72",
+        "sourceId" : "3"
       } ],
       "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
-      "containers" : [ {
-        "description" : "Interfejs dla klientów.",
-        "documentation" : { },
-        "id" : "4",
-        "name" : "Aplikacja webowa",
-        "properties" : {
-          "structurizr.dsl.identifier" : "shop.web"
-        },
-        "relationships" : [ {
-          "description" : "Wywołuje",
-          "destinationId" : "5",
-          "id" : "7",
-          "sourceId" : "4",
-          "tags" : "Relationship",
-          "technology" : "JSON/HTTPS"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "React"
-      }, {
-        "description" : "Logika biznesowa sklepu.",
-        "documentation" : { },
-        "id" : "5",
-        "name" : "API",
-        "properties" : {
-          "structurizr.dsl.identifier" : "shop.api"
-        },
-        "relationships" : [ {
-          "description" : "Czyta i zapisuje",
-          "destinationId" : "6",
-          "id" : "8",
-          "sourceId" : "5",
-          "tags" : "Relationship",
-          "technology" : "JDBC"
-        }, {
-          "description" : "Zleca płatność",
-          "destinationId" : "9",
-          "id" : "15",
-          "sourceId" : "5",
-          "tags" : "Relationship",
-          "technology" : "HTTPS"
-        }, {
-          "description" : "Wysyła potwierdzenia zamówień",
-          "destinationId" : "10",
-          "id" : "17",
-          "sourceId" : "5",
-          "tags" : "Relationship",
-          "technology" : "SMTP"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Java / Spring Boot"
-      }, {
-        "description" : "Produkty, zamówienia, klienci.",
-        "documentation" : { },
-        "id" : "6",
-        "name" : "Baza danych",
-        "properties" : {
-          "structurizr.dsl.identifier" : "shop.db"
-        },
-        "tags" : "Element,Container,Database",
-        "technology" : "PostgreSQL"
-      } ],
-      "description" : "Umożliwia przeglądanie i zakup produktów.",
+      "description" : "HIS i PACS szpitali: ruch chorych, dokumentacja, obrazy.",
       "documentation" : { },
-      "id" : "3",
-      "name" : "Sklep internetowy",
+      "id" : "4",
+      "name" : "Systemy szpitalne",
       "properties" : {
-        "structurizr.dsl.identifier" : "shop"
+        "structurizr.dsl.identifier" : "his",
+        "Wymagania" : "FR-INT-01, FR-INT-03"
       },
       "relationships" : [ {
-        "description" : "Zleca płatność",
-        "destinationId" : "9",
-        "id" : "16",
-        "linkedRelationshipId" : "15",
-        "sourceId" : "3",
-        "technology" : "HTTPS"
+        "description" : "Przesyła pobyty, dokumenty i obrazy",
+        "destinationId" : "31",
+        "id" : "115",
+        "sourceId" : "4",
+        "tags" : "Relationship"
       }, {
-        "description" : "Wysyła potwierdzenia zamówień",
-        "destinationId" : "10",
-        "id" : "18",
-        "linkedRelationshipId" : "17",
-        "sourceId" : "3",
-        "technology" : "SMTP"
+        "description" : "Przesyła pobyty, dokumenty i obrazy",
+        "destinationId" : "12",
+        "id" : "116",
+        "linkedRelationshipId" : "115",
+        "sourceId" : "4"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Zewnętrzny"
     }, {
-      "description" : "Obsługuje płatności kartą.",
+      "description" : "Systemy LIS: przyjmują zlecenia, odsyłają wyniki.",
       "documentation" : { },
-      "group" : "Systemy zewnętrzne",
+      "id" : "5",
+      "name" : "Laboratoria",
+      "properties" : {
+        "structurizr.dsl.identifier" : "lis",
+        "Wymagania" : "FR-INT-02, FR-ZLE-03"
+      },
+      "tags" : "Element,Software System,Zewnętrzny"
+    }, {
+      "description" : "Centrum e-Zdrowia: zdarzenia medyczne, e-recepty, e-skierowania.",
+      "documentation" : { },
+      "id" : "6",
+      "name" : "Platforma P1",
+      "properties" : {
+        "structurizr.dsl.identifier" : "p1",
+        "Wymagania" : "FR-INT-04, NFR-IOP-02"
+      },
+      "tags" : "Element,Software System,Zewnętrzny"
+    }, {
+      "description" : "Weryfikacja uprawnień (eWUŚ) i sprawozdawczość.",
+      "documentation" : { },
+      "id" : "7",
+      "name" : "NFZ",
+      "properties" : {
+        "structurizr.dsl.identifier" : "nfz",
+        "Wymagania" : "FR-INT-05, FR-ROZ-05"
+      },
+      "tags" : "Element,Software System,Zewnętrzny"
+    }, {
+      "description" : "Potwierdzanie tożsamości pacjentów (login.gov.pl).",
+      "documentation" : { },
+      "id" : "8",
+      "name" : "Węzeł Krajowy",
+      "properties" : {
+        "structurizr.dsl.identifier" : "nationalNode",
+        "Wymagania" : "FR-IAM-01"
+      },
+      "tags" : "Element,Software System,Zewnętrzny"
+    }, {
+      "description" : "Płatności online i zwroty.",
+      "documentation" : { },
       "id" : "9",
       "name" : "Bramka płatności",
       "properties" : {
-        "structurizr.dsl.identifier" : "payments"
+        "structurizr.dsl.identifier" : "paymentGateway",
+        "Wymagania" : "FR-ROZ-02/03"
       },
-      "tags" : "Element,Software System,External"
+      "tags" : "Element,Software System,Zewnętrzny"
     }, {
-      "description" : "Wysyła powiadomienia.",
+      "description" : "Doręczają powiadomienia i przypomnienia.",
       "documentation" : { },
-      "group" : "Systemy zewnętrzne",
       "id" : "10",
-      "name" : "System e-mail",
+      "name" : "Dostawcy SMS / e-mail",
       "properties" : {
-        "structurizr.dsl.identifier" : "email"
+        "structurizr.dsl.identifier" : "messaging",
+        "Wymagania" : "FR-WIZ-02, FR-TEL-02, FR-ZLE-05/06"
       },
-      "tags" : "Element,Software System,External"
+      "tags" : "Element,Software System,Zewnętrzny"
+    }, {
+      "description" : "Wymiana dokumentacji i skierowań (HL7 FHIR).",
+      "documentation" : { },
+      "id" : "11",
+      "name" : "Placówki spoza sieci",
+      "properties" : {
+        "structurizr.dsl.identifier" : "externalFacilities",
+        "Wymagania" : "FR-INT-06, NFR-IOP-01"
+      },
+      "relationships" : [ {
+        "description" : "Wymienia dokumentację i skierowania",
+        "destinationId" : "31",
+        "id" : "123",
+        "sourceId" : "11",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Wymienia dokumentację i skierowania",
+        "destinationId" : "12",
+        "id" : "124",
+        "linkedRelationshipId" : "123",
+        "sourceId" : "11"
+      } ],
+      "tags" : "Element,Software System,Zewnętrzny"
+    }, {
+      "containers" : [ {
+        "description" : "Wizyty, teleporady, dokumentacja, wyniki i płatności w przeglądarce.",
+        "documentation" : { },
+        "group" : "Warstwa prezentacji",
+        "id" : "13",
+        "name" : "Portal pacjenta",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.patientPortal",
+          "Wymagania" : "FR-WIZ-01/05, FR-TEL-01/04, FR-DOK-01, FR-ROZ-02/04, FR-IAM-04/05, NFR-UZY-01..03",
+          "Klasa usług" : "K2"
+        },
+        "relationships" : [ {
+          "description" : "Wywołuje API",
+          "destinationId" : "36",
+          "id" : "74",
+          "sourceId" : "13",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Łączy wideo i czat",
+          "destinationId" : "26",
+          "id" : "85",
+          "sourceId" : "13",
+          "tags" : "Relationship,Szczegół"
+        } ],
+        "tags" : "Element,Container,Przeglądarka"
+      }, {
+        "description" : "Funkcje portalu pacjenta na telefonie.",
+        "documentation" : { },
+        "group" : "Warstwa prezentacji",
+        "id" : "14",
+        "name" : "Aplikacja mobilna",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.mobileApp",
+          "Wymagania" : "FR-WIZ-01, FR-TEL-09, NFR-UZY-02",
+          "Klasa usług" : "K2"
+        },
+        "relationships" : [ {
+          "description" : "Wywołuje API",
+          "destinationId" : "36",
+          "id" : "75",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Łączy wideo i czat",
+          "destinationId" : "26",
+          "id" : "86",
+          "sourceId" : "14",
+          "tags" : "Relationship,Szczegół"
+        } ],
+        "tags" : "Element,Container,Mobilna"
+      }, {
+        "description" : "Dokumentacja, zlecenia, wyniki, obrazy i teleporady.",
+        "documentation" : { },
+        "group" : "Warstwa prezentacji",
+        "id" : "15",
+        "name" : "Panel lekarza",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.doctorPanel",
+          "Wymagania" : "FR-DOK-03..06, FR-ZLE-01/02/07, FR-TEL-09, NFR-UZY-04",
+          "Klasa usług" : "K1"
+        },
+        "relationships" : [ {
+          "description" : "Wywołuje API",
+          "destinationId" : "36",
+          "id" : "76",
+          "sourceId" : "15",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Łączy wideo i czat",
+          "destinationId" : "26",
+          "id" : "87",
+          "sourceId" : "15",
+          "tags" : "Relationship,Szczegół"
+        } ],
+        "tags" : "Element,Container,Przeglądarka"
+      }, {
+        "description" : "Rejestracja, grafiki, cenniki, konta i panele analityczne.",
+        "documentation" : { },
+        "group" : "Warstwa prezentacji",
+        "id" : "16",
+        "name" : "Panel administracji",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.adminPanel",
+          "Wymagania" : "FR-WIZ-06..08, FR-ROZ-01/06, FR-ANA-01..05, FR-IAM-02",
+          "Klasa usług" : "K3"
+        },
+        "relationships" : [ {
+          "description" : "Wywołuje API",
+          "destinationId" : "36",
+          "id" : "77",
+          "sourceId" : "16",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Przeglądarka"
+      }, {
+        "components" : [ {
+          "description" : "Przyjmuje żądania pacjentów i rejestracji, sprawdza uprawnienia.",
+          "documentation" : { },
+          "id" : "18",
+          "name" : "Obsługa żądań",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.requestHandler",
+            "Wymagania" : "FR-WIZ-01/05/06/07, NFR-BEZ-03, NFR-IOP-06"
+          },
+          "relationships" : [ {
+            "description" : "Sprawdza uprawnienia",
+            "destinationId" : "37",
+            "id" : "126",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Szuka terminów",
+            "destinationId" : "20",
+            "id" : "128",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Rezerwuje",
+            "destinationId" : "21",
+            "id" : "129",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Odwołuje",
+            "destinationId" : "22",
+            "id" : "130",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zmienia grafik",
+            "destinationId" : "19",
+            "id" : "131",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Godziny pracy i podział na terminy wizyt i teleporad.",
+          "documentation" : { },
+          "id" : "19",
+          "name" : "Grafiki lekarzy",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.schedules",
+            "Wymagania" : "FR-WIZ-08, FR-TEL-07, NFR-SKA-04"
+          },
+          "relationships" : [ {
+            "description" : "Aktualizuje wolne terminy",
+            "destinationId" : "20",
+            "id" : "132",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zapisuje grafiki",
+            "destinationId" : "33",
+            "id" : "137",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Szybki podgląd aktualnych wolnych terminów.",
+          "documentation" : { },
+          "id" : "20",
+          "name" : "Wyszukiwanie terminów",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.slotSearch",
+            "Wymagania" : "FR-WIZ-03, FR-TEL-03, NFR-WYD-01"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Rezerwuje termin tak, by nie mógł zająć go nikt inny.",
+          "documentation" : { },
+          "id" : "21",
+          "name" : "Rezerwacja terminu",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.booking",
+            "Wymagania" : "FR-WIZ-04, FR-WIZ-01/06, FR-TEL-01"
+          },
+          "relationships" : [ {
+            "description" : "Sprawdza uprawnienia NFZ",
+            "destinationId" : "24",
+            "id" : "133",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zleca płatność",
+            "destinationId" : "29",
+            "id" : "135",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zapisuje rezerwacje",
+            "destinationId" : "33",
+            "id" : "138",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zgłasza zdarzenie",
+            "destinationId" : "25",
+            "id" : "140",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Odwołuje wizytę i zleca zwrot wg regulaminu placówki.",
+          "documentation" : { },
+          "id" : "22",
+          "name" : "Odwołania i zwroty",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.cancellation",
+            "Wymagania" : "FR-WIZ-05/07, FR-TEL-04/05, FR-ROZ-03"
+          },
+          "relationships" : [ {
+            "description" : "Zleca zwrot",
+            "destinationId" : "29",
+            "id" : "136",
+            "sourceId" : "22",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zapisuje odwołania",
+            "destinationId" : "33",
+            "id" : "139",
+            "sourceId" : "22",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zgłasza zdarzenie",
+            "destinationId" : "25",
+            "id" : "141",
+            "sourceId" : "22",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Planuje przypomnienia 24 h (lub 1 h) przed wizytą.",
+          "documentation" : { },
+          "id" : "23",
+          "name" : "Przypomnienia",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.reminders",
+            "Wymagania" : "FR-WIZ-02, FR-TEL-02"
+          },
+          "relationships" : [ {
+            "description" : "Czyta nadchodzące wizyty",
+            "destinationId" : "33",
+            "id" : "142",
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Zgłasza przypomnienie",
+            "destinationId" : "25",
+            "id" : "143",
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Sprawdza ubezpieczenie pacjenta, nie blokując rezerwacji.",
+          "documentation" : { },
+          "id" : "24",
+          "name" : "Weryfikacja uprawnień NFZ",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.eligibility",
+            "Wymagania" : "FR-INT-05, NFR-IOP-05"
+          },
+          "relationships" : [ {
+            "description" : "Pyta eWUŚ",
+            "destinationId" : "31",
+            "id" : "134",
+            "sourceId" : "24",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Niezawodnie publikuje zmiany wizyt dla innych usług i analityki.",
+          "documentation" : { },
+          "id" : "25",
+          "name" : "Publikacja zdarzeń",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soz.appointments.eventPublisher",
+            "Wymagania" : "NFR-NIE-06, FR-WIZ-09, FR-TEL-08"
+          },
+          "relationships" : [ {
+            "description" : "Publikuje zdarzenia",
+            "destinationId" : "32",
+            "id" : "144",
+            "sourceId" : "25",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Grafiki lekarzy, wolne terminy, rezerwacje, odwołania i przypomnienia.",
+        "documentation" : { },
+        "group" : "Warstwa aplikacji",
+        "id" : "17",
+        "name" : "Wizyty",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.appointments",
+          "Wymagania" : "FR-WIZ-01..09, FR-TEL-01..05/07, NFR-WYD-01",
+          "Klasa usług" : "K2"
+        },
+        "relationships" : [ {
+          "description" : "Publikuje zdarzenia",
+          "destinationId" : "32",
+          "id" : "88",
+          "sourceId" : "17",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Zleca płatność i zwrot",
+          "destinationId" : "29",
+          "id" : "96",
+          "sourceId" : "17",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Weryfikuje uprawnienia NFZ",
+          "destinationId" : "31",
+          "id" : "97",
+          "sourceId" : "17",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "99",
+          "sourceId" : "17",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Sprawdza uprawnienia",
+          "destinationId" : "37",
+          "id" : "127",
+          "linkedRelationshipId" : "126",
+          "sourceId" : "17"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Bezpieczne połączenia wideo i czat, przesyłanie dokumentów.",
+        "documentation" : { },
+        "group" : "Warstwa aplikacji",
+        "id" : "26",
+        "name" : "Telekonsultacje",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.telehealth",
+          "Wymagania" : "FR-TEL-06/09, NFR-WYD-04, NFR-BEZ-06",
+          "Klasa usług" : "K2"
+        },
+        "relationships" : [ {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "100",
+          "sourceId" : "26",
+          "tags" : "Relationship,Szczegół"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Jedna kartoteka pacjenta, wpisy z historią zmian i podpisem.",
+        "documentation" : { },
+        "group" : "Warstwa aplikacji",
+        "id" : "27",
+        "name" : "Dokumentacja medyczna",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.records",
+          "Wymagania" : "FR-DOK-01..06, FR-INT-01, NFR-WYD-02, NFR-ZGO-02/03",
+          "Klasa usług" : "K1"
+        },
+        "relationships" : [ {
+          "description" : "Publikuje zdarzenia",
+          "destinationId" : "32",
+          "id" : "89",
+          "sourceId" : "27",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "101",
+          "sourceId" : "27",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Przechowuje dokumenty",
+          "destinationId" : "34",
+          "id" : "106",
+          "sourceId" : "27",
+          "tags" : "Relationship,Szczegół"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Zlecenia badań, statusy, wyniki z korektami, wyniki krytyczne.",
+        "documentation" : { },
+        "group" : "Warstwa aplikacji",
+        "id" : "28",
+        "name" : "Zlecenia i wyniki",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.orders",
+          "Wymagania" : "FR-ZLE-01..07, NFR-WYD-03",
+          "Klasa usług" : "K1"
+        },
+        "relationships" : [ {
+          "description" : "Publikuje zdarzenia",
+          "destinationId" : "32",
+          "id" : "90",
+          "sourceId" : "28",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "102",
+          "sourceId" : "28",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Przechowuje wyniki PDF",
+          "destinationId" : "34",
+          "id" : "107",
+          "sourceId" : "28",
+          "tags" : "Relationship,Szczegół"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Cenniki, płatności, zwroty, paragony i świadczenia NFZ.",
+        "documentation" : { },
+        "group" : "Warstwa aplikacji",
+        "id" : "29",
+        "name" : "Rozliczenia",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.billing",
+          "Wymagania" : "FR-ROZ-01..06",
+          "Klasa usług" : "K2 (płatności), K3 (rozliczenia NFZ)"
+        },
+        "relationships" : [ {
+          "description" : "Publikuje zdarzenia",
+          "destinationId" : "32",
+          "id" : "91",
+          "sourceId" : "29",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "103",
+          "sourceId" : "29",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Obsługuje płatności i zwroty",
+          "destinationId" : "9",
+          "id" : "111",
+          "sourceId" : "29",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Przypomnienia, informacje o wynikach, pilne alerty dla lekarzy.",
+        "documentation" : { },
+        "group" : "Warstwa aplikacji",
+        "id" : "30",
+        "name" : "Powiadomienia",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.notifications",
+          "Wymagania" : "FR-WIZ-02, FR-TEL-02, FR-ZLE-05/06, NFR-WYD-03",
+          "Klasa usług" : "K2"
+        },
+        "relationships" : [ {
+          "description" : "Wysyła pilne alerty",
+          "destinationId" : "15",
+          "id" : "98",
+          "sourceId" : "30",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "104",
+          "sourceId" : "30",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Wysyła SMS i e-mail",
+          "destinationId" : "10",
+          "id" : "113",
+          "sourceId" : "30",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Wymiana danych z HIS, LIS, PACS, P1, NFZ i placówkami spoza sieci.",
+        "documentation" : { },
+        "group" : "Warstwa integracji",
+        "id" : "31",
+        "name" : "Integracja HL7 / FHIR",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.integration",
+          "Wymagania" : "FR-INT-01..06, NFR-IOP-01..05",
+          "Klasa usług" : "K1"
+        },
+        "relationships" : [ {
+          "description" : "Wymienia komunikaty",
+          "destinationId" : "32",
+          "id" : "95",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Archiwizuje obrazy",
+          "destinationId" : "34",
+          "id" : "108",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Przesyła zlecenia, odbiera wyniki",
+          "destinationId" : "5",
+          "id" : "117",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Raportuje zdarzenia medyczne",
+          "destinationId" : "6",
+          "id" : "119",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Weryfikuje uprawnienia, sprawozdaje",
+          "destinationId" : "7",
+          "id" : "121",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Asynchroniczna komunikacja usług bez utraty i duplikatów komunikatów.",
+        "documentation" : { },
+        "group" : "Warstwa integracji",
+        "id" : "32",
+        "name" : "Kolejka zdarzeń",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.eventQueue",
+          "Wymagania" : "NFR-NIE-06, NFR-IOP-05, NFR-DOS-04",
+          "Klasa usług" : "K1"
+        },
+        "relationships" : [ {
+          "description" : "Dostarcza wyniki i dokumenty",
+          "destinationId" : "27",
+          "id" : "92",
+          "sourceId" : "32",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Dostarcza zdarzenia",
+          "destinationId" : "30",
+          "id" : "93",
+          "sourceId" : "32",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Zasila danymi (pseudonimizacja)",
+          "destinationId" : "35",
+          "id" : "94",
+          "sourceId" : "32",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Kolejka"
+      }, {
+        "description" : "Dane ustrukturyzowane, osobny schemat dla każdej usługi.",
+        "documentation" : { },
+        "group" : "Warstwa danych",
+        "id" : "33",
+        "name" : "Baza relacyjna",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.database",
+          "Wymagania" : "NFR-BEZ-05, NFR-NIE-02, NFR-ZGO-02/04"
+        },
+        "tags" : "Element,Container,Baza"
+      }, {
+        "description" : "Obrazy diagnostyczne (DICOM), skany i dokumenty PDF.",
+        "documentation" : { },
+        "group" : "Warstwa danych",
+        "id" : "34",
+        "name" : "Magazyn obrazów i dokumentów",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.blobStore",
+          "Wymagania" : "FR-INT-03, NFR-IOP-03, NFR-WYD-05, NFR-ZGO-02"
+        },
+        "tags" : "Element,Container,Baza"
+      }, {
+        "description" : "Pseudonimizowane dane do paneli i raportów.",
+        "documentation" : { },
+        "group" : "Warstwa danych",
+        "id" : "35",
+        "name" : "Hurtownia analityczna",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.warehouse",
+          "Wymagania" : "FR-ANA-01..06, NFR-WYD-06, NFR-ZGO-06",
+          "Klasa usług" : "K3"
+        },
+        "tags" : "Element,Container,Baza"
+      }, {
+        "description" : "Jedno wejście do usług: routing, ochrona, limity.",
+        "documentation" : { },
+        "group" : "Warstwa infrastruktury",
+        "id" : "36",
+        "name" : "Brama API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.apiGateway",
+          "Wymagania" : "NFR-BEZ-03/05, NFR-IOP-06, NFR-SKA-02"
+        },
+        "relationships" : [ {
+          "description" : "Weryfikuje dostęp",
+          "destinationId" : "37",
+          "id" : "78",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Przekazuje żądania",
+          "destinationId" : "17",
+          "id" : "79",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Przekazuje żądania",
+          "destinationId" : "26",
+          "id" : "80",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Przekazuje żądania",
+          "destinationId" : "27",
+          "id" : "81",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Przekazuje żądania",
+          "destinationId" : "28",
+          "id" : "82",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Przekazuje żądania",
+          "destinationId" : "29",
+          "id" : "83",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Udostępnia raporty",
+          "destinationId" : "35",
+          "id" : "84",
+          "sourceId" : "36",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Przekazuje żądania",
+          "destinationId" : "18",
+          "id" : "125",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Logowanie, MFA, role, zgody, upoważnienia i dziennik audytu.",
+        "documentation" : { },
+        "group" : "Warstwa infrastruktury",
+        "id" : "37",
+        "name" : "Tożsamość i dostęp",
+        "properties" : {
+          "structurizr.dsl.identifier" : "soz.identity",
+          "Wymagania" : "FR-IAM-01..06, NFR-BEZ-01..04/08/09"
+        },
+        "relationships" : [ {
+          "description" : "Zapisuje dane",
+          "destinationId" : "33",
+          "id" : "105",
+          "sourceId" : "37",
+          "tags" : "Relationship,Szczegół"
+        }, {
+          "description" : "Potwierdza tożsamość pacjenta",
+          "destinationId" : "8",
+          "id" : "109",
+          "sourceId" : "37",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Łączy pacjentów, lekarzy i laboratoria sieci 5 szpitali i 20 przychodni.",
+      "documentation" : { },
+      "id" : "12",
+      "name" : "System Opieki Zdrowotnej (SOZ)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "soz"
+      },
+      "relationships" : [ {
+        "description" : "Potwierdza tożsamość pacjenta",
+        "destinationId" : "8",
+        "id" : "110",
+        "linkedRelationshipId" : "109",
+        "sourceId" : "12"
+      }, {
+        "description" : "Obsługuje płatności i zwroty",
+        "destinationId" : "9",
+        "id" : "112",
+        "linkedRelationshipId" : "111",
+        "sourceId" : "12"
+      }, {
+        "description" : "Wysyła SMS i e-mail",
+        "destinationId" : "10",
+        "id" : "114",
+        "linkedRelationshipId" : "113",
+        "sourceId" : "12"
+      }, {
+        "description" : "Przesyła zlecenia, odbiera wyniki",
+        "destinationId" : "5",
+        "id" : "118",
+        "linkedRelationshipId" : "117",
+        "sourceId" : "12"
+      }, {
+        "description" : "Raportuje zdarzenia medyczne",
+        "destinationId" : "6",
+        "id" : "120",
+        "linkedRelationshipId" : "119",
+        "sourceId" : "12"
+      }, {
+        "description" : "Weryfikuje uprawnienia, sprawozdaje",
+        "destinationId" : "7",
+        "id" : "122",
+        "linkedRelationshipId" : "121",
+        "sourceId" : "12"
+      } ],
+      "tags" : "Element,Software System"
     } ]
   },
-  "name" : "Sklep",
+  "name" : "System Opieki Zdrowotnej (SOZ)",
   "properties" : {
-    "structurizr.inspection.error" : "3",
+    "structurizr.inspection.error" : "171",
     "structurizr.inspection.info" : "0",
     "structurizr.inspection.ignore" : "0",
     "structurizr.inspection.warning" : "0"
   },
   "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 200,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : true
+      },
+      "containerId" : "17",
+      "description" : "C4 poziom 3 – komponenty usługi Wizyty.",
+      "elements" : [ {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "03-komponenty-wizyty",
+      "name" : "Component View: System Opieki Zdrowotnej (SOZ) - Wizyty",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "125"
+      }, {
+        "id" : "126"
+      }, {
+        "id" : "128"
+      }, {
+        "id" : "129"
+      }, {
+        "id" : "130"
+      }, {
+        "id" : "131"
+      }, {
+        "id" : "132"
+      }, {
+        "id" : "133"
+      }, {
+        "id" : "134"
+      }, {
+        "id" : "135"
+      }, {
+        "id" : "136"
+      }, {
+        "id" : "137"
+      }, {
+        "id" : "138"
+      }, {
+        "id" : "139"
+      }, {
+        "id" : "140"
+      }, {
+        "id" : "141"
+      }, {
+        "id" : "142"
+      }, {
+        "id" : "143"
+      }, {
+        "id" : "144"
+      } ]
+    } ],
     "configuration" : {
       "lastSavedView" : "01-kontekst",
       "styles" : {
         "elements" : [ {
-          "background" : "#438dd5",
+          "shape" : "Cylinder",
+          "tag" : "Baza"
+        }, {
+          "background" : "#5fb3bf",
           "color" : "#ffffff",
+          "stroke" : "#1b8a99",
+          "tag" : "Component"
+        }, {
+          "background" : "#1b8a99",
+          "color" : "#ffffff",
+          "stroke" : "#0e6b78",
           "tag" : "Container"
         }, {
-          "shape" : "Cylinder",
-          "tag" : "Database"
+          "background" : "#ffffff",
+          "color" : "#333333",
+          "stroke" : "#888888",
+          "tag" : "Deployment Node"
         }, {
-          "background" : "#999999",
-          "tag" : "External"
+          "fontSize" : 24,
+          "height" : 260,
+          "tag" : "Element",
+          "width" : 420
         }, {
-          "background" : "#08427b",
+          "background" : "#eef3f4",
+          "color" : "#1d2b2e",
+          "height" : 180,
+          "shape" : "Box",
+          "stroke" : "#0e6b78",
+          "tag" : "Encja",
+          "width" : 380
+        }, {
+          "border" : "Dashed",
+          "color" : "#0e6b78",
+          "fontSize" : 26,
+          "tag" : "Group"
+        }, {
+          "background" : "#e8e8e8",
+          "color" : "#333333",
+          "stroke" : "#888888",
+          "tag" : "Infrastructure Node"
+        }, {
+          "shape" : "Pipe",
+          "tag" : "Kolejka"
+        }, {
+          "height" : 420,
+          "shape" : "MobileDevicePortrait",
+          "tag" : "Mobilna",
+          "width" : 300
+        }, {
+          "background" : "#a86a00",
           "color" : "#ffffff",
           "shape" : "Person",
+          "stroke" : "#7a4d00",
           "tag" : "Person"
         }, {
-          "background" : "#1168bd",
+          "shape" : "WebBrowser",
+          "tag" : "Przeglądarka"
+        }, {
+          "background" : "#0e6b78",
           "color" : "#ffffff",
+          "stroke" : "#094a53",
           "tag" : "Software System"
+        }, {
+          "background" : "#7a7a7a",
+          "color" : "#ffffff",
+          "stroke" : "#555555",
+          "tag" : "Zewnętrzny"
+        } ],
+        "relationships" : [ {
+          "color" : "#555555",
+          "fontSize" : 22,
+          "style" : "Solid",
+          "tag" : "Relationship",
+          "thickness" : 2
         } ]
       },
-      "terminology" : { }
+      "terminology" : {
+        "component" : "Komponent",
+        "container" : "Kontener",
+        "deploymentNode" : "Węzeł wdrożenia",
+        "infrastructureNode" : "Węzeł infrastruktury",
+        "person" : "Osoba",
+        "relationship" : "Relacja",
+        "softwareSystem" : "System"
+      }
     },
     "containerViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 200,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 250,
+        "vertices" : true
+      },
+      "description" : "C4 poziom 2 – przegląd kontenerów w pięciu warstwach. Szczegółowe relacje i systemy zewnętrzne w widokach 02a i 02b. Baza relacyjna jest używana przez wszystkie usługi aplikacji.",
       "elements" : [ {
         "id" : "1",
         "x" : 0,
         "y" : 0
       }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "30",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "34",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "35",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "02-kontenery-przeglad",
+      "name" : "Container View: System Opieki Zdrowotnej (SOZ)",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "108"
+      }, {
+        "id" : "127"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "80"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "94"
+      }, {
+        "id" : "95"
+      } ],
+      "softwareSystemId" : "12"
+    }, {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 200,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : true
+      },
+      "description" : "C4 poziom 2 – obsługa pacjenta: wizyty, teleporady, płatności, powiadomienia.",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "30",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "02a-kontenery-pacjent",
+      "name" : "Container View: System Opieki Zdrowotnej (SOZ)",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "109"
+      }, {
+        "id" : "111"
+      }, {
+        "id" : "113"
+      }, {
+        "id" : "127"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "80"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "86"
+      }, {
+        "id" : "88"
+      }, {
+        "id" : "91"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "96"
+      } ],
+      "softwareSystemId" : "12"
+    }, {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 200,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : true
+      },
+      "description" : "C4 poziom 2 – obsługa kliniczna: dokumentacja, zlecenia, wyniki i integracja z laboratoriami i szpitalami.",
+      "elements" : [ {
         "id" : "2",
         "x" : 0,
         "y" : 0
@@ -215,89 +2208,494 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "9",
+        "id" : "11",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "10",
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "30",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "34",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
         "x" : 0,
         "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
-      "key" : "02-kontenery",
-      "name" : "Container View: Sklep internetowy",
-      "order" : 2,
+      "key" : "02b-kontenery-klinika",
+      "name" : "Container View: System Opieki Zdrowotnej (SOZ)",
+      "order" : 4,
       "relationships" : [ {
-        "id" : "11"
+        "id" : "106"
       }, {
-        "id" : "13"
+        "id" : "107"
       }, {
-        "id" : "15"
+        "id" : "108"
       }, {
-        "id" : "17"
+        "id" : "115"
       }, {
-        "id" : "7"
+        "id" : "117"
       }, {
-        "id" : "8"
+        "id" : "119"
+      }, {
+        "id" : "123"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "89"
+      }, {
+        "id" : "90"
+      }, {
+        "id" : "92"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "95"
+      }, {
+        "id" : "98"
       } ],
-      "softwareSystemId" : "3"
+      "softwareSystemId" : "12"
+    } ],
+    "customViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 200,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : true
+      },
+      "description" : "Diagram encji – główne dane systemu i relacje między nimi.",
+      "elements" : [ {
+        "id" : "38",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "39",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "40",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "41",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "42",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "43",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "44",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "46",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "47",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "48",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "49",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "50",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "51",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "key" : "05-model-danych",
+      "name" : "Custom View: Model danych",
+      "order" : 8,
+      "relationships" : [ {
+        "id" : "52"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "66"
+      } ],
+      "title" : "Model danych"
+    } ],
+    "deploymentViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 150,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 200,
+        "vertices" : true
+      },
+      "description" : "Wdrożenie – region podstawowy z trzema strefami dostępności i region zapasowy w EOG.",
+      "elements" : [ {
+        "id" : "145",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "146",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "147",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "148",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "149",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "150",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "151",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "153",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "154",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "156",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "157",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "162",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "164",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "168",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "171",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "175",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "177",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "178",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "186",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "187",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "191",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "192",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "195",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "196",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "197",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "198",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "199",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "200",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "Produkcja",
+      "key" : "04a-wdrozenie-chmura",
+      "name" : "Deployment View: System Opieki Zdrowotnej (SOZ) - Produkcja",
+      "order" : 6,
+      "relationships" : [ {
+        "id" : "209"
+      }, {
+        "id" : "210"
+      }, {
+        "id" : "211"
+      }, {
+        "id" : "212"
+      }, {
+        "id" : "213"
+      }, {
+        "id" : "214"
+      }, {
+        "id" : "216"
+      } ],
+      "softwareSystemId" : "12"
+    }, {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 200,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : true
+      },
+      "description" : "Wdrożenie – placówka i jej połączenie z chmurą.",
+      "elements" : [ {
+        "id" : "145",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "147",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "148",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "149",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "153",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "156",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "157",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "201",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "202",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "203",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "205",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "207",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "208",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "Produkcja",
+      "key" : "04b-wdrozenie-placowka",
+      "name" : "Deployment View: System Opieki Zdrowotnej (SOZ) - Produkcja",
+      "order" : 7,
+      "relationships" : [ {
+        "id" : "160"
+      }, {
+        "id" : "204"
+      }, {
+        "id" : "206"
+      }, {
+        "id" : "215"
+      }, {
+        "id" : "216"
+      }, {
+        "id" : "217"
+      } ],
+      "softwareSystemId" : "12"
     } ],
     "systemContextViews" : [ {
-      "dimensions" : {
-        "height" : 1263,
-        "width" : 2480
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 250,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 350,
+        "vertices" : true
       },
+      "description" : "C4 poziom 1 – System Opieki Zdrowotnej i jego otoczenie.",
       "elements" : [ {
         "id" : "1",
-        "x" : 199,
-        "y" : 160
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "2",
-        "x" : 199,
-        "y" : 610
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "3",
-        "x" : 940,
-        "y" : 430
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "9",
-        "x" : 1775,
-        "y" : 220
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "10",
-        "x" : 1760,
-        "y" : 705
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "01-kontekst",
-      "name" : "System Context View: Sklep internetowy",
+      "name" : "System Context View: System Opieki Zdrowotnej (SOZ)",
       "order" : 1,
       "relationships" : [ {
-        "id" : "12",
-        "vertices" : [ {
-          "x" : 725,
-          "y" : 580
-        } ]
+        "id" : "110"
       }, {
-        "id" : "14",
-        "vertices" : [ {
-          "x" : 769,
-          "y" : 810
-        } ]
+        "id" : "112"
       }, {
-        "id" : "16",
-        "vertices" : [ {
-          "x" : 1559,
-          "y" : 410
-        } ]
+        "id" : "114"
       }, {
-        "id" : "18",
-        "vertices" : [ {
-          "x" : 1559,
-          "y" : 760
-        } ]
+        "id" : "116"
+      }, {
+        "id" : "118"
+      }, {
+        "id" : "120"
+      }, {
+        "id" : "122"
+      }, {
+        "id" : "124"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "73"
       } ],
-      "softwareSystemId" : "3"
+      "softwareSystemId" : "12"
     } ]
   }
 }

@@ -1,39 +1,18 @@
-workspace "Sklep" {
+workspace "System Opieki Zdrowotnej (SOZ)" {
     !identifiers hierarchical
 
     model {
-        !include model/example.dsl
+        # Kolejność ma znaczenie: relacje i wdrożenie odwołują się do wcześniej zdefiniowanych elementów.
+        !include model/people.dsl
+        !include model/external.dsl
+        !include model/soz.dsl
+        !include model/data_model.dsl
+        !include model/relationships.dsl
+        !include model/deployment.dsl
     }
 
     views {
-        systemContext shop "01-kontekst" {
-            include *
-        }
-
-        container shop "02-kontenery" {
-            include *
-        }
-
-        styles {
-            element "Person" {
-                shape Person
-                background #08427b
-                color #ffffff
-            }
-            element "Software System" {
-                background #1168bd
-                color #ffffff
-            }
-            element "Container" {
-                background #438dd5
-                color #ffffff
-            }
-            element "Database" {
-                shape Cylinder
-            }
-            element "External" {
-                background #999999
-            }
-        }
+        !include views/c4.dsl
+        !include views/styles.dsl
     }
 }
